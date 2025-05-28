@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" data-n-g="" />
+    <title>Document</title>
+    <style type="text/css">
+        @font-face {
+            font-family: 'Atlassian Sans';
+            font-style: normal;
+            font-weight: 400 653;
+            font-display: swap;
+            src:
+                local('AtlassianSans'),
+                local('Atlassian Sans Text'),
+                url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/AtlassianSans-latin.woff2') format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304,
+                U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="max-w-[1440px] m-auto min-h-screen flex flex-col">
+        <div>
+            <div style="height:101px" class="invisible"></div>
+            <div tabindex="-1"
+                class="fixed z-50 top-0 left-0 right-0 w-full transform transition-transform duration-300">
+                <nav role="navigation" class="max-w-[1440px] mx-auto">
+                    <div
+                        class="grid xxs:grid-cols-[16px_repeat(4,_1fr)_16px] xs:grid-cols-[6.865%_repeat(4,_1fr)_6.865%] relative bg-white lg:border-0 xxs:border-b-[0.35px] border-light_gray">
+                        <div class="grid grid-cols-1 xxs:col-start-2 xs:col-start-2 xs:col-span-1 xxs:col-span-3"><a
+                                class="lg:py-6 xl:py-8 xxs:py-[18px] xxs:px-[4px] w-min xl:translate-y-2" href="/"><span
+                                    class="sr-only">Homepage</span>
+                                    <svg width="250" xmlns="http://www.w3.org/2000/svg" viewBox="0 15.399999618530273 231.64999389648438 38" data-asc="1.058" style="
+                                    width: 300;
+                                "><g fill="#000000"><g fill="#000000" transform="translate(0, 0)"><path d="M17.95 18.35Q10.20 18.35 10.20 33.30L10.20 37.25Q10.20 44.35 12.25 48.38Q14.30 52.40 18.30 52.40Q23.80 52.40 28.40 41.70L29.30 41.70L28.95 52.85L28.40 52.85Q28.10 52.30 27.85 52.08Q27.60 51.85 27.13 51.85Q26.65 51.85 23.50 52.63Q20.35 53.40 17.10 53.40Q8.95 53.40 4.47 49.00Q0 44.60 0 35.78Q0 26.95 4.68 22.15Q9.35 17.35 17.25 17.35Q20.30 17.35 23.23 18.13Q26.15 18.90 26.65 18.90Q27.15 18.90 27.40 18.68Q27.65 18.45 27.95 17.90L28.50 17.90L28.90 28.75L28 28.75Q25.75 23.70 23.38 21.03Q21 18.35 17.95 18.35ZM32.75 15.40L45 15.40L45 52.00L47.80 52.00L47.80 52.90L32.95 52.90L32.95 52.00L35.70 52.00L35.70 16.30L32.75 16.30L32.75 15.40ZM64.90 43.05L64.90 38.80Q64.90 33.95 64.38 31.73Q63.85 29.50 61.95 29.50Q60.85 29.50 60.17 30.13Q59.50 30.75 59.20 32.20Q58.75 34.45 58.75 39.05L58.75 42.95Q58.75 48.40 59.08 49.50Q59.40 50.60 59.75 51.30Q60.30 52.50 61.90 52.50Q63.85 52.50 64.45 50.25Q64.90 48.65 64.90 43.05M61.80 53.40Q55.55 53.40 52.35 50.20Q49.15 47.00 49.15 41.03Q49.15 35.05 52.58 31.83Q56 28.60 62.20 28.60Q68.40 28.60 71.45 31.58Q74.50 34.55 74.50 40.65Q74.50 53.40 61.80 53.40ZM105.15 52.90L93.75 52.90L93.20 49.25Q92.40 51.25 90.83 52.33Q89.25 53.40 86.15 53.40Q78.40 53.40 78.40 45.05L78.40 30.00L75.60 30.00L75.60 29.10L87.70 29.10L87.70 46.25Q87.70 49.25 88.13 50.20Q88.55 51.15 89.83 51.15Q91.10 51.15 92.10 49.60Q93.10 48.05 93.10 45.30L93.10 30.00L90.80 30.00L90.80 29.10L102.40 29.10L102.40 52.00L105.15 52.00L105.15 52.90ZM116.30 42.55Q116.30 47.80 116.85 49.53Q117.40 51.25 118.88 51.25Q120.35 51.25 121.43 49.95Q122.50 48.65 122.50 46.10L122.50 35.20Q122.50 33.05 121.65 31.55Q120.80 30.05 119.15 30.05Q117.50 30.05 116.90 32.25Q116.30 34.45 116.30 39.95L116.30 42.55M123.15 52.90L122.60 49.40Q120.90 53.40 115.70 53.40Q111.40 53.40 109.03 50.30Q106.65 47.20 106.65 41.05Q106.65 28.60 116.55 28.60Q120.95 28.60 122.35 31.05L122.35 16.30L119.30 16.30L119.30 15.40L131.80 15.40L131.80 52.00L134.25 52.00L134.25 52.90L123.15 52.90ZM142.90 25.65Q142.90 25.65 141.58 25.65Q140.25 25.65 139.13 24.30Q138 22.95 138 20.95Q138 18.95 139.23 17.65Q140.45 16.35 142.95 16.35Q145.45 16.35 146.75 17.53Q148.05 18.70 148.05 20.88Q148.05 23.05 146.80 24.35Q145.55 25.65 142.90 25.65M135.35 29.10L147.60 29.10L147.60 52.00L150.40 52.00L150.40 52.90L135.55 52.90L135.55 52.00L138.30 52.00L138.30 30.00L135.35 30.00L135.35 29.10ZM149.40 30.00L149.40 29.10L164.35 29.10L164.35 30.00L161.20 30.00L167.20 46.60L172.60 30.00L169.25 30.00L169.25 29.10L176 29.10L176 30.00L173.80 30.00L166.40 52.90L160.70 52.90L151.45 30.00L149.40 30.00ZM191.40 43.05L191.40 38.80Q191.40 33.95 190.88 31.73Q190.35 29.50 188.45 29.50Q187.35 29.50 186.68 30.13Q186 30.75 185.70 32.20Q185.25 34.45 185.25 39.05L185.25 42.95Q185.25 48.40 185.57 49.50Q185.90 50.60 186.25 51.30Q186.80 52.50 188.40 52.50Q190.35 52.50 190.95 50.25Q191.40 48.65 191.40 43.05M188.30 53.40Q182.05 53.40 178.85 50.20Q175.65 47.00 175.65 41.03Q175.65 35.05 179.07 31.83Q182.50 28.60 188.70 28.60Q194.90 28.60 197.95 31.58Q201 34.55 201 40.65Q201 53.40 188.30 53.40ZM220.25 38.15L226.15 30.00L222.55 30.00L222.55 29.10L230 29.10L230 30.00L227.40 30.00L220.90 39.20L229.05 52.00L231.65 52.00L231.65 52.90L214.95 52.90L214.95 52.00L218.50 52.00L213 43.00L207.30 52.00L210.60 52.00L210.60 52.90L202.75 52.90L202.75 52.00L206.05 52.00L212.40 42.00L204.80 30.00L201.90 30.00L201.90 29.10L218.80 29.10L218.80 30.00L215.30 30.00L220.25 38.15Z"></path></g><g fill="#000000" transform="translate(0, 64.55)"><path d=""></path></g></g></svg></a></div>
+                        <div
+                            class="self-end hidden lg:grid xl:min-h-[84px] md:col-start-3 xs:col-start-1 xxs:col-start-auto md:row-start-1 xxs:row-start-auto md:col-span-3 xs:col-span-2 xxs:col-span-1 grid grid-cols-1 auto-rows-min relative">
+                            <div class="overflow-hidden flex justify-start flex-row-reverse">
+                              
+                                <ul
+                                    class="flex justify-end lg:gap-8 2xl:gap-16 py-[25px] w-fit translate-y-[4px] xl:translate-y-[13px]">
+                                    <li class="flex items-center"><a
+                                            class="prose group pb-0 hover:cursor-pointer duration-200 no-underline"
+                                            href="/services/our-approach"><span><span
+                                                    class="bold-charcoal lg:text-[1rem] xl:text-[1.10rem] 2xl:text-[1.25rem] whitespace-nowrap uppercase break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-normal font-SometypeMono tracking-normal prose-charcoal">About</span></span></a></li>
+                                    <li class="flex items-center"><a
+                                            class="prose group pb-0 hover:cursor-pointer duration-200 no-underline"
+                                            href="/fractional-head-of-design"><span><span
+                                                    class="bold-charcoal lg:text-[1rem] xl:text-[1.10rem] 2xl:text-[1.25rem] whitespace-nowrap uppercase break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-normal font-SometypeMono tracking-normal prose-charcoal">Services
+                                                    </span></span></a></li>
+                                    <li class="flex items-center"><a
+                                            class="prose group pb-0 hover:cursor-pointer duration-200 no-underline"
+                                            href="/ux-team-augmentation-and-capability"><span><span
+                                                    class="bold-charcoal lg:text-[1rem] xl:text-[1.10rem] 2xl:text-[1.25rem] whitespace-nowrap uppercase break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-normal font-SometypeMono tracking-normal prose-charcoal">Products
+                                                    </span></span></a></li>
+                                    <li class="flex items-center"><a
+                                            class="prose group pb-0 hover:cursor-pointer duration-200 no-underline"
+                                            href="/about-us/about-us"><span><span
+                                                    class="bold-charcoal lg:text-[1rem] xl:text-[1.10rem] 2xl:text-[1.25rem] whitespace-nowrap uppercase break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-normal font-SometypeMono tracking-normal prose-charcoal"> Contact
+                                                    us</span></span></a></li>
+                                 
+                                    <li class="flex items-center"><a
+                                            class="prose group pb-0 hover:cursor-pointer duration-200 no-underline"
+                                            href="/contact"><span><span
+                                                    class="bold-charcoal lg:text-[1rem] xl:text-[1.10rem] 2xl:text-[1.25rem] whitespace-nowrap uppercase break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-normal font-SometypeMono tracking-normal prose-charcoal">📞</span></span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <ul class="col-start-5 flex items-center col-span-1 justify-end px-[4px]">
+                            <li class="lg:hidden"><button type="button" aria-label="Open navigation" class="btn"><span
+                                        class="transition-colors duration-200 items-center inline-flex justify-center"><span
+                                            class=" whitespace-nowrap break-all"><svg width="24" height="16"
+                                                viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                                class="inline transform -translate-y-px group-hover:prose-charcoal duration-200 w-[20px] h-[20px] prose-pink">
+                                                <path
+                                                    d="M24 16H12V13.3333H24V16ZM24 9.33333H0V6.66667H24V9.33333ZM24 2.66667H0V0H24V2.66667Z"
+                                                    fill="#333333"></path>
+                                            </svg></span></span></button></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div>
+            <div style="opacity: 1; transform: none;"><!--$-->
+                <div class="grid md:grid-cols-[0_1fr] xxs:grid-cols-[1fr] grid-rows-[auto_auto_1fr] ">
+                    <div
+                        class="2xl:ml-[5.3rem] 2xl5:ml-[2rem] md5:pl-[0rem] md:ml-[3.8rem] lg5:ml-[3rem] lg:ml-[4.2rem] xl:ml-[1rem] xl5:ml-[5rem]  md:block xxs:hidden w-[0px] row-start-1 col-start-1 row-end-4">
+                        <div
+                            class="grid xxs:grid-cols-[16px_repeat(4,_1fr)_16px] xs:grid-cols-[6.865%_repeat(4,_1fr)_6.865%] relative w-[86vw] md5:w-[98.7vw] max-w-[1440px] overflow-hidden 2xl:pt-[91px] xl:pt-[60px] xxs:pt-[40px] 2xl:pb-[91px] xl:pb-[60px] xxs:pb-[40px]">
+                            <svg class="lg:block h-auto safari-animation-hack mt-[72px] md:col-start-4 md:col-end-7  md:w-[340px] lg:w-[385px] xl:w-auto md:mr-[-9vw] md:ml-[9vw] xl:mr-[-3.5vw]  2xl:mr-[-9vw]"
+                                width="586" height="1374" viewBox="0 0 586 1374" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M420.69 36H413L426.85 0H435.05L449 36H441.51L438.48 27.77H423.71L420.68 36H420.69ZM431.1 7.77L426.08 21.38H436.13L431.1 7.77V7.77Z"
+                                    fill="#333333" transform="translate(-54)" opacity="1" transform-origin="431px 18px"
+                                    style="transform: translateX(-54px) translateY(0px) scale(1); transform-origin: 431px 18px;">
+                                </path>
+                                <path fill="#333333"
+                                    d="M460,1336c7.11,0,11.22,4.12,11.22,9.65a8.07,8.07,0,0,1-5.28,7.72,8.42,8.42,0,0,1,6.4,8.42c0,5.89-4.46,10.21-11.27,10.21H446.5v-36Zm-1.27,14.42c2.79,0,4.62-1.47,4.62-3.91s-1.57-3.86-4.71-3.86h-4.26v7.77h4.35Zm.66,15c3.1,0,5-1.62,5-4.21s-1.83-4.21-5-4.21h-5v8.42Z"
+                                    transform="translate(-54)" opacity="1" transform-origin="459.4217987060547px 1354px"
+                                    style="transform: translateX(-54px) translateY(0px) scale(1); transform-origin: 459.422px 1354px;">
+                                </path>
+                                <path stroke="#333333" stroke-width="1.5" fill="transparent" stroke-linecap="round"
+                                    stroke-linejoin="round" transform="translate(-54)"
+                                    d="M456.55,47.94S510,110,492.67,194.08s-87.75,80.33-99,79.17c-13.64-1.41-17.89-2.11-22.45-2.48a83.76,83.76,0,0,0-16.36-.1,105.32,105.32,0,0,0-13.69,2.3c-1.95.45-19.4,5.67-28.08,15.23s-21,23.21-17.62,48.14,37.31,28.6,40.41-.46-1.5-40.5-11.35-57.76-41.59-32.23-44.48-33.7c-2.32-1.18-34.36-18.42-51.05.05-12.42,13.75-5.81,33.94,7.12,49.32,12.17,14.46,31.68,28.4,44.54,33.83s35.65,11.63,51,9.1,30.2-5.88,44.49-22.21,28.21-57,10.65-94.15-63.36-57.74-93.8-53.61-58.91,14.54-80.73,66.75c-15.61,37.36-18.1,99.22-48.83,101.5-46.68,3.46-74.36-96.48-43.28-111.25,20.07-9.54,35.34,23.63,33.94,48-.35,6-4,37.95-33.92,63.69s-33.82,43.4-34.75,52.9-.19,25.46-.19,25.46L90,408.14l-4.78,5.77-5.32-5.19"
+                                    opacity="1" stroke-dashoffset="0px"
+                                    stroke-dasharray="1723.8621826171875px 1723.8621826171875px"></path>
+                                <path stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                                    transform="translate(-54)"
+                                    d="M126.89,456.62h81.44s14.76-.42,14.83,13.36,0,78.47,0,78.47-1.09,17.58,15.1,17.72,15.21-14.62,15.21-17c0-2.18,0-66,0-77.63a12.23,12.23,0,0,1,.88-4.73c1.49-3.82,6.14-10.18,13.87-10.18,11.5,0,15.33,9.64,15.47,13,.13,3.1,0,69.08,0,80.08a17.14,17.14,0,0,0,.54,4.51c1.13,4.34,4.54,11.95,14.49,11.95,13.93,0,15.34-12.91,15.34-14.91V473.37c.07-4.76.42-6.13,1.72-8.55,2-3.8,6-8.2,13.18-8.2,8,0,14.86,7,14.86,13.65,0,14.52.05,185.49.05,185.49l4.78-5-4.82,5-4.7-4.93"
+                                    opacity="1" stroke-dashoffset="0px"
+                                    stroke-dasharray="818.3702392578125px 818.3702392578125px"></path>
+                                <path stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                                    transform="translate(-54)"
+                                    d="M344.49,739.75v194l-52.21.07-29.16,21.11,28.67,20.89-28.6,20.5,28.65,21.5-28.66,21L292,1059.94l-28,20v15.91l4.71-4.64-4.71,4.67-4.78-4.65"
+                                    opacity="1" stroke-dashoffset="0px"
+                                    stroke-dasharray="530.1835327148438px 530.1835327148438px"></path>
+                                <path stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                                    transform="translate(-54)"
+                                    d="M263.92,1187.92v17.67l7.18,5.26,21.37,15.67-27.42,21,27.42,21-27.25,21.17,27.25,20.82L265.05,1331l26.11,22.81,143.55-.17-5.12-4.8,5.12,4.84-5.14,5"
+                                    opacity="1" stroke-dashoffset="0px"
+                                    stroke-dasharray="424.6308898925781px 424.6308898925781px"></path>
+                                <path fill="#EF85A0" transform="translate(-54)"
+                                    d="M236.06,293.66a44.84,44.84,0,1,0-44.84-44.84A44.85,44.85,0,0,0,236.06,293.66Z"
+                                    opacity="1" transform-origin="236.05999755859375px 248.81999969482422px"
+                                    style="transform: translateX(-54px) translateY(0%) scale(1); transform-origin: 236.06px 248.82px;">
+                                </path>
+                                <path fill="#EF85A0" transform="translate(-54)" d="M115,488H54V427h61v61Z" opacity="1"
+                                    transform-origin="84.5px 457.5px"
+                                    style="transform: translateX(-54px) translateY(0%) scale(1); transform-origin: 84.5px 457.5px;">
+                                </path>
+                                <path fill="#EF85A0" transform="translate(-54)" d="M344.5,728.86l-33.5-61h66.17Z"
+                                    opacity="1" transform-origin="344.0849914550781px 698.3599853515625px"
+                                    style="transform: translateX(-54px) translateY(0%) scale(1); transform-origin: 344.085px 698.36px;">
+                                </path>
+                                <path fill="#EF85A0" transform="translate(-54)"
+                                    d="M293.75,1159.75v-34.5L263.87,1108,234,1125.25v34.5L263.87,1177Z" opacity="1"
+                                    transform-origin="263.875px 1142.5px"
+                                    style="transform: translateX(-54px) scale(1) rotate(180deg); transform-origin: 263.875px 1142.5px;">
+                                </path>
+                            </svg></div>
+                    </div><!--$-->
+                    <div
+                        class="grid xxs:grid-cols-[16px_repeat(4,_1fr)_16px] xs:grid-cols-[6.865%_repeat(4,_1fr)_6.865%] relative 2xl:pt-[91px] xl:pt-[60px] xxs:pt-[40px] pb-10 lg:pb-12">
+                        <div class="absolute h-auto w-full overflow-hidden md:col-start-2 md:col-end-5"></div>
+                        <div class="grid lg:grid-cols-4 xs:grid-cols-2 xxs:grid-cols-1 col-span-4 col-start-2">
+                            <div
+                                class="2xl:max-w-[917px] xl:max-w-[790px] lg:max-w-[565px] md:max-w-[517px] col-start-1 md:row-start-1 xxs:row-start-auto md:col-span-3 xs:col-span-2 xxs:col-span-1 grid grid-cols-1 auto-rows-min relative">
+                                
+                                <div>
+                                    <div>
+                                        <p
+                                            class="prose break-words max-w-title relative md:break-normal xl:text-[80px] xs:text-4xl xxs:text-3xl font-bold prose-charcoal font-CircularStd">
+                                            <span><span class="font-black relative z-[1]">  Leading the Charge </span></span></p>
+                                        <p
+                                            class="prose break-words max-w-title relative md:break-normal xl:text-[80px] xs:text-4xl xxs:text-3xl font-bold prose-charcoal font-CircularStd">
+                                            <span><span class="font-black relative z-[1]">in IT Consulting </span></span></p>
+                                        <p
+                                            class="prose break-words max-w-title relative md:break-normal xl:text-[80px] xs:text-4xl xxs:text-3xl font-bold prose-charcoal font-CircularStd">
+                                            <span><span
+                                                    class="font-black relative z-[1]">by&nbsp;</span></span><span><span
+                                                    class="font-black prose-pink decoration-pink relative z-[1]">& Services</span></span><span><span
+                                                    class="font-black relative z-[1]">.</span></span></p>
+                                        <p
+                                            class="min-h-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-charcoal">
+                                            <span><span class="relative z-[1]"></span></span></p>
+                                        <p
+                                            class="min-h-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-charcoal">
+                                            <span><span class="relative z-[1]"></span></span></p>
+                                        <p
+                                            class="min-h-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-charcoal">
+                                            <span><span class="relative z-[1]"></span></span></p>
+                                        <p
+                                            class="min-h-lg break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-lg font-CircularStd tracking-normal prose-charcoal">
+                                            <span><span class="relative z-[1]">We help companies transform their
+                                                </span></span><span><span
+                                                    class="font-black prose-pink decoration-pink relative z-[1]">customer
+                                                    experience</span></span><span><span
+                                                    class="font-black relative z-[1]">,</span></span></p>
+                                        <p
+                                            class="min-h-lg break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-lg font-CircularStd tracking-normal prose-charcoal">
+                                            <span><span class="relative z-[1]">design products and services that focus
+                                                    on </span></span><span><span
+                                                    class="font-black prose-pink decoration-pink relative z-[1]">user
+                                                    needs</span></span><span><span class="font-black relative z-[1]">,
+                                                </span></span></p>
+                                        <p
+                                            class="min-h-lg break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-lg font-CircularStd tracking-normal prose-charcoal">
+                                            <span><span class="relative z-[1]">and make complex systems
+                                                </span></span><span><span
+                                                    class="font-black prose-pink decoration-pink relative z-[1]">brilliantly
+                                                    easy to use</span></span><span><span
+                                                    class="font-black relative z-[1]">.</span></span></p>
+                                        <p
+                                            class="min-h-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-charcoal">
+                                            <span><span class="relative z-[1]"></span></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--/$--><!--$-->
+                    <div
+                        class="grid xxs:grid-cols-[16px_repeat(4,_1fr)_16px] xs:grid-cols-[6.865%_repeat(4,_1fr)_6.865%] relative 2xl:pt-[91px] xl:pt-[60px] xxs:pt-[40px] 2xl:pb-[91px] xl:pb-[60px] xxs:pb-[40px]">
+                        <div class="col-span-6 xxs:col-span-4 xxs:col-start-2">
+                            <div class="lg:mb-[101px] xxs:mb-[36px] md:max-w-60vw">
+                                <p
+                                    class="xs:text-base xxs:text-sm mobileTitle break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-SometypeMono tracking-normal prose-charcoal">
+                                    Who we work with –&nbsp;</p>
+                            </div>
+                            <div
+                                class="flex xxs:gap-[36px] items-center overflow-x-scroll overflow-y-hidden scroll scroll-hidden justify-between">
+                                <div class="min-w-[100px] xxs:h-[30px] md:h-auto max-w-[200px] relative"><img
+                                        alt="Google" caption="Google" loading="lazy" width="177" height="50"
+                                        decoding="async" data-nimg="1" style="color:transparent"
+                                        src="https://cdn.sanity.io/images/ppwzgrza/production/a22cba23260fe3080a4e5e791cee2b286b6c3333-177x50.svg">
+                                </div>
+                                <div class="min-w-[100px] xxs:h-[30px] md:h-auto max-w-[200px] relative"><img
+                                        alt="Zurich" caption="Zurich" loading="lazy" width="177" height="50"
+                                        decoding="async" data-nimg="1" style="color:transparent"
+                                        src="https://cdn.sanity.io/images/ppwzgrza/production/c55907ceb826e47f1e9f4c86c3829200108fc875-177x50.svg">
+                                </div>
+                                <div class="min-w-[100px] xxs:h-[30px] md:h-auto max-w-[200px] relative"><img
+                                        alt="stripe" caption="stripe" loading="lazy" width="177" height="51"
+                                        decoding="async" data-nimg="1" style="color:transparent"
+                                        src="https://cdn.sanity.io/images/ppwzgrza/production/4bca1b112293f7abd231d86a0c339d42796d8d85-177x51.svg">
+                                </div>
+                                <div class="min-w-[100px] xxs:h-[30px] md:h-auto max-w-[200px] relative"><img
+                                        alt="SSE Airtricity" caption="SSE Airtricity" loading="lazy" width="177"
+                                        height="50" decoding="async" data-nimg="1" style="color:transparent"
+                                        src="https://cdn.sanity.io/images/ppwzgrza/production/1e7ebf994f6377653a8dd96a802a5126b6bf187e-177x50.svg">
+                                </div>
+                                <div class="min-w-[100px] xxs:h-[30px] md:h-auto max-w-[200px] relative"><img
+                                        alt="Coinbase" caption="Coinbase" loading="lazy" width="178" height="50"
+                                        decoding="async" data-nimg="1" style="color:transparent"
+                                        src="https://cdn.sanity.io/images/ppwzgrza/production/4749aacb75fed3395963e05ed581df2b14392fb7-178x50.svg">
+                                </div>
+                                <div class="min-w-[100px] xxs:h-[30px] md:h-auto max-w-[200px] relative"><img
+                                        alt="BNP Paribas" caption="BNP Paribas" loading="lazy" width="178" height="41"
+                                        decoding="async" data-nimg="1" style="color:transparent"
+                                        src="https://cdn.sanity.io/images/ppwzgrza/production/58959aa03d2979c7e8b5ccec49cbf771dc29e4da-178x41.svg">
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--/$--><!--$-->
+                    <div
+                        class="grid xxs:grid-cols-[16px_repeat(4,_1fr)_16px] xs:grid-cols-[6.865%_repeat(4,_1fr)_6.865%] relative 2xl:pt-[91px] xl:pt-[60px] xxs:pt-[40px] 2xl:pb-[91px] xl:pb-[60px] xxs:pb-[40px]">
+                        <div class="col-span-6 xxs:col-span-4 xxs:col-start-2">
+                            <div class="md:mb-[48px] xxs:mb-[36px]">
+                                <p
+                                    class="xs:text-base xxs:text-sm mobileTitle break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-SometypeMono tracking-normal prose-charcoal">
+                                    What we do –&nbsp;</p>
+                            </div>
+                            <div
+                                class="xl:grid-cols-2 md:grid-cols-1 sticky duration-500 ease-in-out-cubic md:top-[100px] lg:top-[140px] col-start-1 md:row-start-1 xxs:row-start-auto col-span-1 grid grid-cols-1 auto-rows-min relative">
+                                <ul
+                                    class="flex flex-col gap-[48px] 2xl:mb-[32px] md:mb-[20px] xxs:mb-[11px] col-start-1">
+                                    <li>
+                                        <h3
+                                            class="prose break-words max-w-title relative md:text-2xl xs:text-xl xxs:text-lg font-bold prose-charcoal font-CircularStd md:text-2xl xxs:text-2xl md:mb-[27px] xxs:mb-[39px] 2xl:w-[75%] xl:w-full  md:w-[55%] xxs:w-full">
+                                        </h3>
+                                        <div
+                                            class="col-start-1 md:row-start-1 xxs:row-start-auto col-span-1 grid md:grid-cols-2 xs:grid-cols-1 xxs:grid-cols-1 auto-rows-min relative">
+                                            <div
+                                                class="pb-[5px] md:w-full xs:w-[75%] xxs:w-full md:col-span-1 xxs:col-span-2 group duration-200">
+                                                <a class="prose group pb-0 hover:cursor-pointer duration-200 no-underline"
+                                                    href="/services/UX-research"><span><span
+                                                            class="group-hover:prose-pink break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-lg font-bold font-SometypeMono tracking-normal prose-charcoal">User
+                                                            Experience, Product Design &amp; Customer<span
+                                                                class=" whitespace-nowrap break-all">
+                                                                Research&nbsp;&nbsp;<svg viewBox="0 0 15 15" fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                    class="inline transform -translate-y-px w-[20px] h-[20px]">
+                                                                    <path
+                                                                        d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
+                                                                        fill="currentColor" fill-rule="evenodd"
+                                                                        clip-rule="evenodd"></path>
+                                                                </svg></span></span></span></a></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <h3
+                                            class="prose break-words max-w-title relative md:text-2xl xs:text-xl xxs:text-lg font-bold prose-charcoal font-CircularStd md:text-2xl xxs:text-2xl md:mb-[27px] xxs:mb-[39px] 2xl:w-[75%] xl:w-full  md:w-[55%] xxs:w-full">
+                                        </h3>
+                                        <div
+                                            class="col-start-1 md:row-start-1 xxs:row-start-auto col-span-1 grid md:grid-cols-2 xs:grid-cols-1 xxs:grid-cols-1 auto-rows-min relative">
+                                            <div
+                                                class="pb-[5px] md:w-full xs:w-[75%] xxs:w-full md:col-span-1 xxs:col-span-2 group duration-200">
+                                                <a class="prose group pb-0 hover:cursor-pointer duration-200 no-underline"
+                                                    href="/fractional-head-of-design"><span><span
+                                                            class="group-hover:prose-pink break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-lg font-bold font-SometypeMono tracking-normal prose-charcoal">Fractional
+                                                            Head of Design &amp; Product<span
+                                                                class=" whitespace-nowrap break-all">
+                                                                Strategy&nbsp;&nbsp;<svg viewBox="0 0 15 15" fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                    class="inline transform -translate-y-px w-[20px] h-[20px]">
+                                                                    <path
+                                                                        d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
+                                                                        fill="currentColor" fill-rule="evenodd"
+                                                                        clip-rule="evenodd"></path>
+                                                                </svg></span></span></span></a></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <h3
+                                            class="prose break-words max-w-title relative md:text-2xl xs:text-xl xxs:text-lg font-bold prose-charcoal font-CircularStd md:text-2xl xxs:text-2xl md:mb-[27px] xxs:mb-[39px] 2xl:w-[75%] xl:w-full  md:w-[55%] xxs:w-full">
+                                        </h3>
+                                        <div
+                                            class="col-start-1 md:row-start-1 xxs:row-start-auto col-span-1 grid md:grid-cols-2 xs:grid-cols-1 xxs:grid-cols-1 auto-rows-min relative">
+                                            <div
+                                                class="pb-[5px] md:w-full xs:w-[75%] xxs:w-full md:col-span-1 xxs:col-span-2 group duration-200">
+                                                <a class="prose group pb-0 hover:cursor-pointer duration-200 no-underline"
+                                                    href="/ux-team-augmentation-and-capability"><span><span
+                                                            class="group-hover:prose-pink break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-lg font-bold font-SometypeMono tracking-normal prose-charcoal">Team
+                                                            Augmentation, UX &amp; Product<span
+                                                                class=" whitespace-nowrap break-all">
+                                                                Capability&nbsp;&nbsp;<svg viewBox="0 0 15 15"
+                                                                    fill="none" xmlns="http://www.w3.org/2000/svg"
+                                                                    class="inline transform -translate-y-px w-[20px] h-[20px]">
+                                                                    <path
+                                                                        d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
+                                                                        fill="currentColor" fill-rule="evenodd"
+                                                                        clip-rule="evenodd"></path>
+                                                                </svg></span></span></span></a></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div><!--/$-->
+                </div><!--/$--><!--$-->
+                <div
+                    class="grid xxs:grid-cols-[16px_repeat(4,_1fr)_16px] xs:grid-cols-[6.865%_repeat(4,_1fr)_6.865%] relative">
+                    <div class="col-span-6 z-[1]"><svg width="100%" height="33" viewBox="0 0 1914 33" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" class="xs:mb-[-17px] xxs:mb-[-5px]">
+                            <path d="M-6 16.5L155 16.5" stroke="#F8D9E2"></path>
+                            <path d="M563 16.5L154 16.5" stroke="url(#paint0_linear_1862_2180)"></path>
+                            <path
+                                d="M726.5 16L726.086 16.2806L726.497 16.8867L726.912 16.2833L726.5 16ZM716.331 1.00001L716.745 0.719441L716.331 0.108974L715.917 0.719441L716.331 1.00001ZM706.162 16L705.748 16.2806L706.162 16.891L706.576 16.2806L706.162 16ZM695.993 1.00001L696.407 0.71944L695.993 0.108973L695.579 0.719439L695.993 1.00001ZM685.824 16L685.41 16.2806L685.824 16.891L686.238 16.2806L685.824 16ZM675.655 1.00001L676.069 0.719438L675.655 0.10897L675.241 0.719438L675.655 1.00001ZM665.486 16L665.072 16.2806L665.486 16.891L665.9 16.2806L665.486 16ZM655.317 1.00001L655.731 0.719436L655.317 0.108968L654.903 0.719436L655.317 1.00001ZM645.148 16L644.736 16.2833L645.151 16.8866L645.562 16.2806L645.148 16ZM634.831 1.00001L635.243 0.716667L634.825 0.108229L634.415 0.722695L634.831 1.00001ZM624.5 16.5V17H624.768L624.916 16.7773L624.5 16.5ZM757.155 1L757.577 0.731923L757.168 0.0888761L756.741 0.719432L757.155 1ZM746.986 16L746.572 16.2806L746.986 16.891L747.4 16.2806L746.986 16ZM736.817 1L737.231 0.719428L736.82 0.113344L736.405 0.716662L736.817 1ZM726.914 15.7194L716.745 0.719441L715.917 1.28058L726.086 16.2806L726.914 15.7194ZM715.917 0.719441L705.748 15.7194L706.576 16.2806L716.745 1.28058L715.917 0.719441ZM706.576 15.7194L696.407 0.71944L695.579 1.28058L705.748 16.2806L706.576 15.7194ZM695.579 0.719439L685.41 15.7194L686.238 16.2806L696.407 1.28058L695.579 0.719439ZM686.238 15.7194L676.069 0.719438L675.241 1.28058L685.41 16.2806L686.238 15.7194ZM675.241 0.719438L665.072 15.7194L665.9 16.2806L676.069 1.28058L675.241 0.719438ZM665.9 15.7194L655.731 0.719436L654.903 1.28058L665.072 16.2806L665.9 15.7194ZM654.903 0.719436L644.734 15.7194L645.562 16.2806L655.731 1.28058L654.903 0.719436ZM645.56 15.7167L635.243 0.716667L634.419 1.28334L644.736 16.2833L645.56 15.7167ZM634.415 0.722695L624.084 16.2227L624.916 16.7773L635.247 1.27732L634.415 0.722695ZM767.422 16.232L757.577 0.731923L756.733 1.26808L766.578 16.7681L767.422 16.232ZM756.741 0.719432L746.572 15.7194L747.4 16.2806L757.569 1.28057L756.741 0.719432ZM747.4 15.7194L737.231 0.719428L736.403 1.28057L746.572 16.2806L747.4 15.7194ZM736.405 0.716662L726.088 15.7167L726.912 16.2833L737.229 1.28334L736.405 0.716662ZM766.5 17L970.5 17V16L766.5 16V17ZM624.5 16H563V17H624.5V16Z"
+                                fill="url(#paint1_linear_1862_2180)"></path>
+                            <path
+                                d="M1622 16.5L1622.41 16.2194L1622 15.6133L1621.59 16.2166L1622 16.5ZM1632.17 31.5L1631.75 31.7805L1632.17 32.391L1632.58 31.7805L1632.17 31.5ZM1642.34 16.5L1642.75 16.2194L1642.34 15.609L1641.92 16.2194L1642.34 16.5ZM1652.51 31.5L1652.09 31.7805L1652.51 32.391L1652.92 31.7805L1652.51 31.5ZM1662.68 16.5L1663.09 16.2194L1662.68 15.609L1662.26 16.2194L1662.68 16.5ZM1672.84 31.5L1672.43 31.7806L1672.84 32.391L1673.26 31.7806L1672.84 31.5ZM1683.01 16.5L1683.43 16.2194L1683.01 15.609L1682.6 16.2194L1683.01 16.5ZM1693.18 31.5L1692.77 31.7806L1693.18 32.391L1693.6 31.7806L1693.18 31.5ZM1703.35 16.5L1703.76 16.2167L1703.35 15.6133L1702.94 16.2194L1703.35 16.5ZM1713.67 31.5L1713.26 31.7833L1713.67 32.3866L1714.08 31.7806L1713.67 31.5ZM1723.84 16.5L1724.25 16.2194L1723.84 15.609L1723.42 16.2194L1723.84 16.5ZM1734.01 31.5L1733.59 31.7806L1734.01 32.391L1734.42 31.7806L1734.01 31.5ZM1744.18 16.5L1744.59 16.2194L1744.18 15.609L1743.76 16.2194L1744.18 16.5ZM1754.34 31.5L1753.93 31.7806L1754.34 32.391L1754.76 31.7806L1754.34 31.5ZM1764.51 16.5L1764.51 16L1764.25 16L1764.1 16.2194L1764.51 16.5ZM1581.5 16.5L1581.92 16.2256L1581.77 16L1581.5 16L1581.5 16.5ZM1591.34 31.5L1590.93 31.7743L1591.34 32.4009L1591.76 31.7806L1591.34 31.5ZM1601.51 16.5L1601.93 16.2194L1601.51 15.609L1601.1 16.2194L1601.51 16.5ZM1611.68 31.5L1611.27 31.7806L1611.68 32.3866L1612.09 31.7833L1611.68 31.5ZM1621.59 16.7806L1631.75 31.7805L1632.58 31.2194L1622.41 16.2194L1621.59 16.7806ZM1632.58 31.7805L1642.75 16.7806L1641.92 16.2194L1631.75 31.2194L1632.58 31.7805ZM1641.92 16.7806L1652.09 31.7805L1652.92 31.2194L1642.75 16.2194L1641.92 16.7806ZM1652.92 31.7805L1663.09 16.7806L1662.26 16.2194L1652.09 31.2194L1652.92 31.7805ZM1662.26 16.7806L1672.43 31.7806L1673.26 31.2194L1663.09 16.2194L1662.26 16.7806ZM1673.26 31.7806L1683.43 16.7806L1682.6 16.2194L1672.43 31.2194L1673.26 31.7806ZM1682.6 16.7806L1692.77 31.7806L1693.6 31.2194L1683.43 16.2194L1682.6 16.7806ZM1693.6 31.7806L1703.77 16.7806L1702.94 16.2194L1692.77 31.2194L1693.6 31.7806ZM1702.94 16.7833L1713.26 31.7833L1714.08 31.2166L1703.76 16.2167L1702.94 16.7833ZM1714.08 31.7806L1724.25 16.7806L1723.42 16.2194L1713.25 31.2194L1714.08 31.7806ZM1723.42 16.7806L1733.59 31.7806L1734.42 31.2194L1724.25 16.2194L1723.42 16.7806ZM1734.42 31.7806L1744.59 16.7806L1743.76 16.2194L1733.59 31.2194L1734.42 31.7806ZM1743.76 16.7806L1753.93 31.7806L1754.76 31.2194L1744.59 16.2194L1743.76 16.7806ZM1754.76 31.7806L1764.93 16.7806L1764.1 16.2194L1753.93 31.2194L1754.76 31.7806ZM1581.08 16.7744L1590.93 31.7743L1591.76 31.2256L1581.92 16.2256L1581.08 16.7744ZM1591.76 31.7806L1601.93 16.7806L1601.1 16.2194L1590.93 31.2194L1591.76 31.7806ZM1601.1 16.7806L1611.27 31.7806L1612.1 31.2194L1601.93 16.2194L1601.1 16.7806ZM1612.09 31.7833L1622.41 16.7833L1621.59 16.2166L1611.27 31.2166L1612.09 31.7833ZM1581.5 16L1379 16L1379 17L1581.5 17L1581.5 16ZM1764.51 17L1787 17L1787 16L1764.51 16L1764.51 17Z"
+                                fill="url(#paint2_linear_1862_2180)"></path>
+                            <path d="M1379 16.5L970 16.5" stroke="url(#paint3_linear_1862_2180)"></path>
+                            <path d="M1787 16.5L1914 16.5" stroke="#DAD7F0"></path>
+                            <defs>
+                                <linearGradient id="paint0_linear_1862_2180" x1="154" y1="16.5" x2="561.5" y2="16.5"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#F8D9E2"></stop>
+                                    <stop offset="1" stop-color="#F8E1C9"></stop>
+                                </linearGradient>
+                                <linearGradient id="paint1_linear_1862_2180" x1="563" y1="16.5001" x2="971" y2="16.5001"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#F8E1C9"></stop>
+                                    <stop offset="1" stop-color="#CAEDE8"></stop>
+                                </linearGradient>
+                                <linearGradient id="paint2_linear_1862_2180" x1="1785.5" y1="15.9999" x2="1377.5"
+                                    y2="15.9999" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#DAD7F0"></stop>
+                                    <stop offset="1" stop-color="#CFE4F6"></stop>
+                                </linearGradient>
+                                <linearGradient id="paint3_linear_1862_2180" x1="970" y1="16.5" x2="1377.5" y2="16.5"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#CBEDE9"></stop>
+                                    <stop offset="1" stop-color="#CFE4F6"></stop>
+                                </linearGradient>
+                            </defs>
+                        </svg></div>
+                </div><!--/$--><!--$-->
+                <div
+                    class="grid xxs:grid-cols-[16px_repeat(4,_1fr)_16px] xs:grid-cols-[6.865%_repeat(4,_1fr)_6.865%] relative 2xl:pt-[91px] xl:pt-[60px] xxs:pt-[40px] 2xl:pb-[91px] xl:pb-[60px] xxs:pb-[40px]">
+                    <div class="col-span-6 xxs:col-span-4 xxs:col-start-2">
+                        <div
+                            class="md:sticky md:top-[24px] 3xl:mb-[48px] mb-[32px] col-start-1 md:row-start-1 xxs:row-start-auto md:col-span-4 xs:col-span-2 xxs:col-span-1 grid grid-cols-1 auto-rows-min relative">
+                            <p
+                                class="xs:text-base xxs:text-sm mobileTitle break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-SometypeMono tracking-normal prose-charcoal">
+                                How we do it –&nbsp;</p>
+                        </div>
+                        <div
+                            class="col-start-1 md:row-start-1 xxs:row-start-auto md:col-span-4 xs:col-span-2 xxs:col-span-1 grid lg:grid-cols-4 xs:grid-cols-2 xxs:grid-cols-1 auto-rows-min relative">
+                            <div
+                                class="col-start-auto row-start-auto md:col-span-2 xs:col-span-2 xxs:col-span-1 grid lg:grid-cols-4 xs:grid-cols-2 xxs:grid-cols-1 auto-rows-min relative">
+                                <div
+                                    class="xxs:mb-[60px] bg-white xl:col-span-3 xxs:col-span-4 pr-[24px] md:sticky md:top-[68px] col-start-1 row-start-auto col-span-1 grid grid-cols-1 auto-rows-min relative">
+                                    <h3
+                                        class="prose break-words max-w-title relative md:text-2xl xs:text-xl xxs:text-lg font-bold prose-charcoal font-CircularStd md:min-h-2xl xs:min-h-xl xxs:min-h-lg">
+                                        <span><span class="relative z-[1]">We keep your </span></span><span><span
+                                                class="prose-pink decoration-pink relative z-[1]">customer at the
+                                                centre</span></span><span><span class="relative z-[1]"> of your entire
+                                                product development lifecycle,
+                                                from strategy through to optimisation.</span></span></h3>
+                                    <p
+                                        class="min-h-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-charcoal">
+                                        <span><span class="relative z-[1]"></span></span></p>
+                                    <p
+                                        class="min-h-lg break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-lg font-CircularStd tracking-normal prose-charcoal">
+                                        <span><span class="relative z-[1]">We’re trusted by the biggest players to drive
+                                                revenue, improve products, and unlock innovation.</span></span></p>
+                                </div>
+                            </div>
+                            <div
+                                class="2xl:gap-y-[192px] md:gap-y-[128px] xxs:gap-y-[96px] xxs:mt-[16px] col-start-auto row-start-auto md:col-span-2 xs:col-span-2 xxs:col-span-1 grid grid-cols-1 auto-rows-min relative">
+                                <div
+                                    class=" 2xl:gap-y-[192px] md:gap-y-[128px] xxs:gap-y-[96px] col-start-1 row-start-auto col-span-1 grid grid-cols-1 auto-rows-min relative">
+                                    <div class="h-fit">
+                                        <div class="text-0 h-full w-full"><img alt="" loading="lazy" width="317"
+                                                height="308" decoding="async" data-nimg="1"
+                                                srcset="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2F99ce4362208c834e7d96a80d6fb7895400c38960-317x308.png%3Fw%3D317%26h%3D308%26q%3D85%26auto%3Dformat&amp;w=384&amp;q=85 1x, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2F99ce4362208c834e7d96a80d6fb7895400c38960-317x308.png%3Fw%3D317%26h%3D308%26q%3D85%26auto%3Dformat&amp;w=640&amp;q=85 2x"
+                                                src="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2F99ce4362208c834e7d96a80d6fb7895400c38960-317x308.png%3Fw%3D317%26h%3D308%26q%3D85%26auto%3Dformat&amp;w=640&amp;q=85"
+                                                style="color: transparent;"></div>
+                                    </div>
+                                    <div class="md:pr-[15px] xxs:pr-0 md:w-[87.5%] xxs:w-full">
+                                        <div>
+                                            <h4
+                                                class="prose break-words max-w-title relative md:text-xl xxs:text-lg font-bold prose-charcoal font-CircularStd md:min-h-xl xxs:min-h-lg">
+                                                <span><span class="relative z-[1]">Product strategy, UX research &amp;
+                                                        innovation</span></span></h4>
+                                            <p
+                                                class="min-h-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-charcoal">
+                                                <span><span class="relative z-[1]"></span></span></p>
+                                            <p
+                                                class="min-h-lg break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-lg font-CircularStd tracking-normal prose-charcoal">
+                                                <span><span class="relative z-[1]">Interrogate your current platform,
+                                                        workflows, and UI systems and plot systematic updates to be a
+                                                    </span></span><span><span class="font-black relative z-[1]">better
+                                                        fit for the future</span></span><span><span
+                                                        class="relative z-[1]">.</span></span></p>
+                                            <p
+                                                class="min-h-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-charcoal">
+                                                <span><span class="relative z-[1]"></span></span></p>
+                                            <div class="prose font-CircularStd marker:text-charcoal">
+                                                <ul class="list-disc  text-base">
+                                                    <li>Site / Product UX Audit</li>
+                                                    <li>Product validation and market fit</li>
+                                                    <li>Discovery &amp; Definition: Product</li>
+                                                    <li>Discovery &amp; Definition: Customer</li>
+                                                    <li>Discovery &amp; Definition: AI</li>
+                                                    <li>Service Design / Customer journeys</li>
+                                                    <li>Accessibility audit</li>
+                                                    <li>Analytics implementation</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="md:pr-[15px] xxs:pr-0 md:w-[87.5%] xxs:w-full">
+                                        <div>
+                                            <h4
+                                                class="prose break-words max-w-title relative md:text-xl xxs:text-lg font-bold prose-charcoal font-CircularStd md:min-h-xl xxs:min-h-lg">
+                                                <span><span class="relative z-[1]">UX/Product Design &amp; Delivery
+                                                    </span></span></h4>
+                                            <p
+                                                class="min-h-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-charcoal">
+                                                <span><span class="relative z-[1]"></span></span></p>
+                                            <p
+                                                class="min-h-lg break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-lg font-CircularStd tracking-normal prose-charcoal">
+                                                <span><span class="relative z-[1]">We get from </span></span><span><span
+                                                        class="font-black relative z-[1]">insight to implementation to
+                                                        impact</span></span><span><span class="relative z-[1]">
+                                                        following a battle-tested, flexible UX process.</span></span>
+                                            </p>
+                                            <p
+                                                class="min-h-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-charcoal">
+                                                <span><span class="relative z-[1]"></span></span></p>
+                                            <div class="prose font-CircularStd marker:text-charcoal">
+                                                <ul class="list-disc  text-base">
+                                                    <li>Product: UX/UI Refresh</li>
+                                                    <li>Product: Fix</li>
+                                                    <li>Product: Create</li>
+                                                    <li>Product: Programme</li>
+                                                    <li>Service Prototyping</li>
+                                                    <li>Website strategy and design</li>
+                                                    <li>Interactive prototyping</li>
+                                                    <li>Front end development</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="md:pr-[15px] xxs:pr-0 md:w-[87.5%] xxs:w-full">
+                                        <div>
+                                            <h4
+                                                class="prose break-words max-w-title relative md:text-xl xxs:text-lg font-bold prose-charcoal font-CircularStd md:min-h-xl xxs:min-h-lg">
+                                                <span><span class="relative z-[1]">Support growth &amp; product
+                                                        optimisation over the long term</span></span></h4>
+                                            <p
+                                                class="min-h-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-charcoal">
+                                                <span><span class="relative z-[1]"></span></span></p>
+                                            <p
+                                                class="min-h-lg break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-lg font-CircularStd tracking-normal prose-charcoal">
+                                                <span><span class="relative z-[1]">Your needs will shift depending on
+                                                        the stage of the product-life cycle. We can partner with you at
+                                                        each point on your journey: in </span></span><span><span
+                                                        class="font-black relative z-[1]">execution, optimisation, and
+                                                        leadership</span></span><span><span
+                                                        class="relative z-[1]">.</span></span></p>
+                                            <p
+                                                class="min-h-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-charcoal">
+                                                <span><span class="relative z-[1]"></span></span></p>
+                                            <div class="prose font-CircularStd marker:text-charcoal">
+                                                <ul class="list-disc  text-base">
+                                                    <li>UX/UI team resourcing</li>
+                                                    <li>Director of Design as a service</li>
+                                                    <li>Product owner as a service</li>
+                                                    <li>Embedded Service Design </li>
+                                                    <li>Programme product team</li>
+                                                    <li>Product / journey optimisation</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="h-fit">
+                                        <div class="text-0 h-full w-full"><img alt="" loading="lazy" width="342"
+                                                height="226" decoding="async" data-nimg="1"
+                                                srcset="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2F01b1e69b84fa3829184b8ad26cabd4f4068fd4c6-342x226.png%3Fw%3D342%26h%3D226%26q%3D85%26auto%3Dformat&amp;w=384&amp;q=85 1x, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2F01b1e69b84fa3829184b8ad26cabd4f4068fd4c6-342x226.png%3Fw%3D342%26h%3D226%26q%3D85%26auto%3Dformat&amp;w=750&amp;q=85 2x"
+                                                src="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2F01b1e69b84fa3829184b8ad26cabd4f4068fd4c6-342x226.png%3Fw%3D342%26h%3D226%26q%3D85%26auto%3Dformat&amp;w=750&amp;q=85"
+                                                style="color: transparent;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/$--><!--$-->
+                <div
+                    class="grid xxs:grid-cols-[16px_repeat(4,_1fr)_16px] xs:grid-cols-[6.865%_repeat(4,_1fr)_6.865%] relative 2xl:pt-[91px] xl:pt-[60px] xxs:pt-[40px] 2xl:pb-[91px] xl:pb-[60px] xxs:pb-[40px]">
+                    <div class="col-span-6 xxs:col-span-4 xxs:col-start-2">
+                        <h2
+                            class="break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-SometypeMono tracking-normal prose-charcoal">
+                            Learn more about...</h2>
+                        <div
+                            class="grid gap-4 md:gap-6 lg:gap-8 xl:gap-10 mt-6 sm:grid-cols-2 gap-4 md:gap-6 lg:gap-8 xl:gap-10 mt-6 md:grid-cols-3">
+                            <div class="relative group overflow-hidden">
+                                <div class="absolute inset-0 z-0"><img alt="" loading="lazy" width="72" height="72"
+                                        decoding="async" data-nimg="1" style="color:transparent"
+                                        src="https://cdn.sanity.io/images/ppwzgrza/production/f6bb5377f141617313aa5f7c4084014c73ff07fd-72x72.svg">
+                                </div>
+                                <div
+                                    class="relative z-10 px-14 py-20 sm:pt-14 sm:pb-0 md:px-6 md:pt-14 lg:p-14 lg:pr-20 flex flex-col gap-6 h-full">
+                                    <div class="mt-auto"><span
+                                            class="bg-white whitespace-nowrap font-SometypeMono text-charcoal group-hover:text-pink transition-colors py-2 px-2 border-b border-b-charcoal inline-flex gap-2 items-center">UX,
+                                            UI &amp; Product Design<svg viewBox="0 0 15 15" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg" class="w-5 h-5">
+                                                <path
+                                                    d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
+                                                    fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+                                            </svg></span></div>
+                                </div><a class="absolute inset-0 z-20" href="/services/ux-ui-and-product-design"></a>
+                            </div>
+                            <div class="relative group overflow-hidden">
+                                <div class="absolute inset-0 z-0"><img alt="" loading="lazy" width="73" height="72"
+                                        decoding="async" data-nimg="1" style="color:transparent"
+                                        src="https://cdn.sanity.io/images/ppwzgrza/production/4c62e3f8bf235810d39a15368703221b00a608ca-73x72.svg">
+                                </div>
+                                <div
+                                    class="relative z-10 px-14 py-20 sm:pt-14 sm:pb-0 md:px-6 md:pt-14 lg:p-14 lg:pr-20 flex flex-col gap-6 h-full">
+                                    <div class="mt-auto"><span
+                                            class="bg-white whitespace-nowrap font-SometypeMono text-charcoal group-hover:text-pink transition-colors py-2 px-2 border-b border-b-charcoal inline-flex gap-2 items-center">Product
+                                            Discovery &amp; Research<svg viewBox="0 0 15 15" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg" class="w-5 h-5">
+                                                <path
+                                                    d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
+                                                    fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+                                            </svg></span></div>
+                                </div><a class="absolute inset-0 z-20" href="/services/UX-research"></a>
+                            </div>
+                            <div class="relative group overflow-hidden">
+                                <div class="absolute inset-0 z-0"><img alt="" loading="lazy" width="72" height="72"
+                                        decoding="async" data-nimg="1" style="color:transparent"
+                                        src="https://cdn.sanity.io/images/ppwzgrza/production/3ab6a2cb442f4efedf8607685c8ae7646ea3a745-72x72.svg">
+                                </div>
+                                <div
+                                    class="relative z-10 px-14 py-20 sm:pt-14 sm:pb-0 md:px-6 md:pt-14 lg:p-14 lg:pr-20 flex flex-col gap-6 h-full">
+                                    <div class="mt-auto"><span
+                                            class="bg-white whitespace-nowrap font-SometypeMono text-charcoal group-hover:text-pink transition-colors py-2 px-2 border-b border-b-charcoal inline-flex gap-2 items-center">Fractional
+                                            Design Leadership<svg viewBox="0 0 15 15" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg" class="w-5 h-5">
+                                                <path
+                                                    d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
+                                                    fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+                                            </svg></span></div>
+                                </div><a class="absolute inset-0 z-20" href="/fractional-head-of-design"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/$--><!--$-->
+                <div
+                    class="grid xxs:grid-cols-[16px_repeat(4,_1fr)_16px] xs:grid-cols-[6.865%_repeat(4,_1fr)_6.865%] relative">
+                    <div class="col-span-6 z-[1]"><svg width="100%" height="33" viewBox="0 0 1914 33" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" class="xs:mb-[-17px] xxs:mb-[-5px]">
+                            <path d="M-6 16.5L155 16.5" stroke="#F8D9E2"></path>
+                            <path d="M563 16.5L154 16.5" stroke="url(#paint0_linear_1862_2180)"></path>
+                            <path
+                                d="M726.5 16L726.086 16.2806L726.497 16.8867L726.912 16.2833L726.5 16ZM716.331 1.00001L716.745 0.719441L716.331 0.108974L715.917 0.719441L716.331 1.00001ZM706.162 16L705.748 16.2806L706.162 16.891L706.576 16.2806L706.162 16ZM695.993 1.00001L696.407 0.71944L695.993 0.108973L695.579 0.719439L695.993 1.00001ZM685.824 16L685.41 16.2806L685.824 16.891L686.238 16.2806L685.824 16ZM675.655 1.00001L676.069 0.719438L675.655 0.10897L675.241 0.719438L675.655 1.00001ZM665.486 16L665.072 16.2806L665.486 16.891L665.9 16.2806L665.486 16ZM655.317 1.00001L655.731 0.719436L655.317 0.108968L654.903 0.719436L655.317 1.00001ZM645.148 16L644.736 16.2833L645.151 16.8866L645.562 16.2806L645.148 16ZM634.831 1.00001L635.243 0.716667L634.825 0.108229L634.415 0.722695L634.831 1.00001ZM624.5 16.5V17H624.768L624.916 16.7773L624.5 16.5ZM757.155 1L757.577 0.731923L757.168 0.0888761L756.741 0.719432L757.155 1ZM746.986 16L746.572 16.2806L746.986 16.891L747.4 16.2806L746.986 16ZM736.817 1L737.231 0.719428L736.82 0.113344L736.405 0.716662L736.817 1ZM726.914 15.7194L716.745 0.719441L715.917 1.28058L726.086 16.2806L726.914 15.7194ZM715.917 0.719441L705.748 15.7194L706.576 16.2806L716.745 1.28058L715.917 0.719441ZM706.576 15.7194L696.407 0.71944L695.579 1.28058L705.748 16.2806L706.576 15.7194ZM695.579 0.719439L685.41 15.7194L686.238 16.2806L696.407 1.28058L695.579 0.719439ZM686.238 15.7194L676.069 0.719438L675.241 1.28058L685.41 16.2806L686.238 15.7194ZM675.241 0.719438L665.072 15.7194L665.9 16.2806L676.069 1.28058L675.241 0.719438ZM665.9 15.7194L655.731 0.719436L654.903 1.28058L665.072 16.2806L665.9 15.7194ZM654.903 0.719436L644.734 15.7194L645.562 16.2806L655.731 1.28058L654.903 0.719436ZM645.56 15.7167L635.243 0.716667L634.419 1.28334L644.736 16.2833L645.56 15.7167ZM634.415 0.722695L624.084 16.2227L624.916 16.7773L635.247 1.27732L634.415 0.722695ZM767.422 16.232L757.577 0.731923L756.733 1.26808L766.578 16.7681L767.422 16.232ZM756.741 0.719432L746.572 15.7194L747.4 16.2806L757.569 1.28057L756.741 0.719432ZM747.4 15.7194L737.231 0.719428L736.403 1.28057L746.572 16.2806L747.4 15.7194ZM736.405 0.716662L726.088 15.7167L726.912 16.2833L737.229 1.28334L736.405 0.716662ZM766.5 17L970.5 17V16L766.5 16V17ZM624.5 16H563V17H624.5V16Z"
+                                fill="url(#paint1_linear_1862_2180)"></path>
+                            <path
+                                d="M1622 16.5L1622.41 16.2194L1622 15.6133L1621.59 16.2166L1622 16.5ZM1632.17 31.5L1631.75 31.7805L1632.17 32.391L1632.58 31.7805L1632.17 31.5ZM1642.34 16.5L1642.75 16.2194L1642.34 15.609L1641.92 16.2194L1642.34 16.5ZM1652.51 31.5L1652.09 31.7805L1652.51 32.391L1652.92 31.7805L1652.51 31.5ZM1662.68 16.5L1663.09 16.2194L1662.68 15.609L1662.26 16.2194L1662.68 16.5ZM1672.84 31.5L1672.43 31.7806L1672.84 32.391L1673.26 31.7806L1672.84 31.5ZM1683.01 16.5L1683.43 16.2194L1683.01 15.609L1682.6 16.2194L1683.01 16.5ZM1693.18 31.5L1692.77 31.7806L1693.18 32.391L1693.6 31.7806L1693.18 31.5ZM1703.35 16.5L1703.76 16.2167L1703.35 15.6133L1702.94 16.2194L1703.35 16.5ZM1713.67 31.5L1713.26 31.7833L1713.67 32.3866L1714.08 31.7806L1713.67 31.5ZM1723.84 16.5L1724.25 16.2194L1723.84 15.609L1723.42 16.2194L1723.84 16.5ZM1734.01 31.5L1733.59 31.7806L1734.01 32.391L1734.42 31.7806L1734.01 31.5ZM1744.18 16.5L1744.59 16.2194L1744.18 15.609L1743.76 16.2194L1744.18 16.5ZM1754.34 31.5L1753.93 31.7806L1754.34 32.391L1754.76 31.7806L1754.34 31.5ZM1764.51 16.5L1764.51 16L1764.25 16L1764.1 16.2194L1764.51 16.5ZM1581.5 16.5L1581.92 16.2256L1581.77 16L1581.5 16L1581.5 16.5ZM1591.34 31.5L1590.93 31.7743L1591.34 32.4009L1591.76 31.7806L1591.34 31.5ZM1601.51 16.5L1601.93 16.2194L1601.51 15.609L1601.1 16.2194L1601.51 16.5ZM1611.68 31.5L1611.27 31.7806L1611.68 32.3866L1612.09 31.7833L1611.68 31.5ZM1621.59 16.7806L1631.75 31.7805L1632.58 31.2194L1622.41 16.2194L1621.59 16.7806ZM1632.58 31.7805L1642.75 16.7806L1641.92 16.2194L1631.75 31.2194L1632.58 31.7805ZM1641.92 16.7806L1652.09 31.7805L1652.92 31.2194L1642.75 16.2194L1641.92 16.7806ZM1652.92 31.7805L1663.09 16.7806L1662.26 16.2194L1652.09 31.2194L1652.92 31.7805ZM1662.26 16.7806L1672.43 31.7806L1673.26 31.2194L1663.09 16.2194L1662.26 16.7806ZM1673.26 31.7806L1683.43 16.7806L1682.6 16.2194L1672.43 31.2194L1673.26 31.7806ZM1682.6 16.7806L1692.77 31.7806L1693.6 31.2194L1683.43 16.2194L1682.6 16.7806ZM1693.6 31.7806L1703.77 16.7806L1702.94 16.2194L1692.77 31.2194L1693.6 31.7806ZM1702.94 16.7833L1713.26 31.7833L1714.08 31.2166L1703.76 16.2167L1702.94 16.7833ZM1714.08 31.7806L1724.25 16.7806L1723.42 16.2194L1713.25 31.2194L1714.08 31.7806ZM1723.42 16.7806L1733.59 31.7806L1734.42 31.2194L1724.25 16.2194L1723.42 16.7806ZM1734.42 31.7806L1744.59 16.7806L1743.76 16.2194L1733.59 31.2194L1734.42 31.7806ZM1743.76 16.7806L1753.93 31.7806L1754.76 31.2194L1744.59 16.2194L1743.76 16.7806ZM1754.76 31.7806L1764.93 16.7806L1764.1 16.2194L1753.93 31.2194L1754.76 31.7806ZM1581.08 16.7744L1590.93 31.7743L1591.76 31.2256L1581.92 16.2256L1581.08 16.7744ZM1591.76 31.7806L1601.93 16.7806L1601.1 16.2194L1590.93 31.2194L1591.76 31.7806ZM1601.1 16.7806L1611.27 31.7806L1612.1 31.2194L1601.93 16.2194L1601.1 16.7806ZM1612.09 31.7833L1622.41 16.7833L1621.59 16.2166L1611.27 31.2166L1612.09 31.7833ZM1581.5 16L1379 16L1379 17L1581.5 17L1581.5 16ZM1764.51 17L1787 17L1787 16L1764.51 16L1764.51 17Z"
+                                fill="url(#paint2_linear_1862_2180)"></path>
+                            <path d="M1379 16.5L970 16.5" stroke="url(#paint3_linear_1862_2180)"></path>
+                            <path d="M1787 16.5L1914 16.5" stroke="#DAD7F0"></path>
+                            <defs>
+                                <linearGradient id="paint0_linear_1862_2180" x1="154" y1="16.5" x2="561.5" y2="16.5"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#F8D9E2"></stop>
+                                    <stop offset="1" stop-color="#F8E1C9"></stop>
+                                </linearGradient>
+                                <linearGradient id="paint1_linear_1862_2180" x1="563" y1="16.5001" x2="971" y2="16.5001"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#F8E1C9"></stop>
+                                    <stop offset="1" stop-color="#CAEDE8"></stop>
+                                </linearGradient>
+                                <linearGradient id="paint2_linear_1862_2180" x1="1785.5" y1="15.9999" x2="1377.5"
+                                    y2="15.9999" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#DAD7F0"></stop>
+                                    <stop offset="1" stop-color="#CFE4F6"></stop>
+                                </linearGradient>
+                                <linearGradient id="paint3_linear_1862_2180" x1="970" y1="16.5" x2="1377.5" y2="16.5"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#CBEDE9"></stop>
+                                    <stop offset="1" stop-color="#CFE4F6"></stop>
+                                </linearGradient>
+                            </defs>
+                        </svg></div>
+                </div><!--/$--><!--$-->
+                <div
+                    class="grid xxs:grid-cols-[16px_repeat(4,_1fr)_16px] xs:grid-cols-[6.865%_repeat(4,_1fr)_6.865%] relative px-5 overflow-hidden 2xl:pt-[91px] xl:pt-[60px] xxs:pt-[40px] pb-10 lg:pb-12">
+                    <div class="col-span-6 xxs:col-span-4 xxs:col-start-2">
+                        <div class="max-w-[550px] mx-auto bg-white relative my-16">
+                            <div class="bg-white relative z-10 px-2"><span
+                                    class="mb-2 uppercase block break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-bold font-SometypeMono tracking-normal prose-charcoal">Our
+                                    approach –&nbsp;</span>
+                                <h2
+                                    class="prose break-words max-w-title relative md:text-3xl xs:text-2xl xxs:text-xl font-bold prose-charcoal font-CircularStd mb-4">
+                                    <div>We follow a UX process <span class="prose-pink hover:prose-pink">because it
+                                            works</span>.</div>
+                                </h2>
+                                <div
+                                    class="break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-charcoal">
+                                    <p class="text-xbase md:text-lg lg:text-xl">Built on industry standards, refined
+                                        through experience, our in-house approach prioritises the user, focuses on
+                                        outcomes and delivers results.</p>
+                                    <p class="text-xbase md:text-lg lg:text-xl">It's flexible, it's battle-tested, and
+                                        it has a proven track record across industries and markets.</p>
+                                    <p class="text-xbase md:text-lg lg:text-xl">It allows us to:</p>
+                                </div>
+                            </div>
+                            <div class="absolute -left-8 xs:-left-14 -top-[64px] w-[190px] h-[190px] md:hidden"><img
+                                    alt="" loading="lazy" width="190" height="190" decoding="async" data-nimg="1"
+                                    style="color:transparent"
+                                    src="https://cdn.sanity.io/images/ppwzgrza/production/e0aeb48c6d9549371ac40f715ce872f784933a05-190x190.svg">
+                            </div>
+                            <div class="absolute -left-[94px] -top-[40px] w-[190px] h-[190px] hidden md:block"><img
+                                    alt="" loading="lazy" width="190" height="190" decoding="async" data-nimg="1"
+                                    style="color:transparent"
+                                    src="https://cdn.sanity.io/images/ppwzgrza/production/e0aeb48c6d9549371ac40f715ce872f784933a05-190x190.svg">
+                            </div>
+                            <div class="absolute -right-8 xs:-right-10 -bottom-[50px] w-[190px] h-[190px] md:hidden">
+                                <img alt="" loading="lazy" width="190" height="190" decoding="async" data-nimg="1"
+                                    style="color:transparent"
+                                    src="https://cdn.sanity.io/images/ppwzgrza/production/e0aeb48c6d9549371ac40f715ce872f784933a05-190x190.svg">
+                            </div>
+                            <div class="absolute -right-[96px] -bottom-[70px] w-[190px] h-[190px] hidden md:block"><img
+                                    alt="" loading="lazy" width="190" height="190" decoding="async" data-nimg="1"
+                                    style="color:transparent"
+                                    src="https://cdn.sanity.io/images/ppwzgrza/production/e0aeb48c6d9549371ac40f715ce872f784933a05-190x190.svg">
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/$--><!--$-->
+                <div
+                    class="grid xxs:grid-cols-[16px_repeat(4,_1fr)_16px] xs:grid-cols-[6.865%_repeat(4,_1fr)_6.865%] relative bg-white 2xl:pt-[91px] xl:pt-[60px] xxs:pt-[40px] 2xl:pb-[91px] xl:pb-[60px] xxs:pb-[40px]">
+                    <div class="col-span-6 xxs:col-span-4 xxs:col-start-2">
+                        <div>
+                            <div
+                                class="2xl:gap-y-[117px] md:gap-y-[78px] xxs:gap-y-[56px] col-start-1 md:row-start-1 xxs:row-start-auto col-span-1 grid lg:grid-cols-4 xs:grid-cols-2 xxs:grid-cols-1 auto-rows-min relative">
+                                <div class="2xl:pr-[88px] md:pr-[44px] xxs:pr-[22px] ">
+                                    <div class="xs:max-w-[230px] h-[120px] xs:mx-0 xxs:mx-auto duration-500 relative">
+                                        <img alt="" loading="lazy" decoding="async" data-nimg="fill"
+                                            style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"
+                                            src="https://cdn.sanity.io/images/ppwzgrza/production/2b4d6aebb14a4bc4970090579148b7c719ed0dfc-72x72.svg">
+                                    </div>
+                                    <div class="mt-[32px]">
+                                        <h4
+                                            class="prose break-words max-w-title relative md:text-xl xxs:text-lg font-bold prose-charcoal font-CircularStd">
+                                            Ship quality products</h4>
+                                    </div>
+                                    <div class="mt-[16px]">
+                                        <p
+                                            class="break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-charcoal">
+                                            Release products that beat competitors.</p>
+                                    </div>
+                                </div>
+                                <div class="2xl:pr-[88px] md:pr-[44px] xxs:pr-[22px] ">
+                                    <div class="xs:max-w-[230px] h-[120px] xs:mx-0 xxs:mx-auto duration-500 relative">
+                                        <img alt="" loading="lazy" decoding="async" data-nimg="fill"
+                                            style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"
+                                            src="https://cdn.sanity.io/images/ppwzgrza/production/24443386fbaf5f43fc444e16cb7538d667845a7d-73x72.svg">
+                                    </div>
+                                    <div class="mt-[32px]">
+                                        <h4
+                                            class="prose break-words max-w-title relative md:text-xl xxs:text-lg font-bold prose-charcoal font-CircularStd">
+                                            Create happier users</h4>
+                                    </div>
+                                    <div class="mt-[16px]">
+                                        <p
+                                            class="break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-charcoal">
+                                            Fit products to user needs for higher satisfaction and loyalty.</p>
+                                    </div>
+                                </div>
+                                <div class="2xl:pr-[88px] md:pr-[44px] xxs:pr-[22px] ">
+                                    <div class="xs:max-w-[230px] h-[120px] xs:mx-0 xxs:mx-auto duration-500 relative">
+                                        <img alt="" loading="lazy" decoding="async" data-nimg="fill"
+                                            style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"
+                                            src="https://cdn.sanity.io/images/ppwzgrza/production/431d39efab5f0d5b9de4ae0201ff2352d486f702-73x72.svg">
+                                    </div>
+                                    <div class="mt-[32px]">
+                                        <h4
+                                            class="prose break-words max-w-title relative md:text-xl xxs:text-lg font-bold prose-charcoal font-CircularStd">
+                                            Reduce project risk</h4>
+                                    </div>
+                                    <div class="mt-[16px]">
+                                        <p
+                                            class="break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-charcoal">
+                                            Reduce risk of overrun and project misfires</p>
+                                    </div>
+                                </div>
+                                <div class="2xl:pr-[88px] md:pr-[44px] xxs:pr-[22px] ">
+                                    <div class="xs:max-w-[230px] h-[120px] xs:mx-0 xxs:mx-auto duration-500 relative">
+                                        <img alt="" loading="lazy" decoding="async" data-nimg="fill"
+                                            style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"
+                                            src="https://cdn.sanity.io/images/ppwzgrza/production/9b9daeed15d8d5138d7c74ae24ad5f87381f7830-72x72.svg">
+                                    </div>
+                                    <div class="mt-[32px]">
+                                        <h4
+                                            class="prose break-words max-w-title relative md:text-xl xxs:text-lg font-bold prose-charcoal font-CircularStd">
+                                            Deliver results that matter</h4>
+                                    </div>
+                                    <div class="mt-[16px]">
+                                        <p
+                                            class="break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-charcoal">
+                                            Increase revenue, stickiness, and deliver costs savings.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/$--><!--$-->
+                <div
+                    class="grid xxs:grid-cols-[16px_repeat(4,_1fr)_16px] xs:grid-cols-[6.865%_repeat(4,_1fr)_6.865%] relative bg-pink py-[90px] 2xl:pt-[91px] xl:pt-[60px] xxs:pt-[40px] 2xl:pb-[91px] xl:pb-[60px] xxs:pb-[40px]">
+                    <div class="col-span-6 xxs:col-span-4 xxs:col-start-2">
+                        <div
+                            class="col-start-1 md:row-start-1 xxs:row-start-auto md:col-span-4 xs:col-span-2 xxs:col-span-1 grid grid-cols-1 auto-rows-min relative">
+                            <div>
+                                <h3
+                                    class="prose break-words max-w-title relative md:text-2xl xs:text-xl xxs:text-lg font-bold prose-charcoal font-CircularStd md:min-h-2xl xs:min-h-xl xxs:min-h-lg">
+                                    <span><span class="relative z-[1]">Let’s create something great
+                                            together.</span></span></h3>
+                                <div class="not-prose my-[50px]">
+                                    <div class="flex-wrap gap-4 inline-flex">
+                                        <div class="flex-shrink-0 max-w-full w-full"><a href="/contact"><span
+                                                    aria-label="Get in touch" class="btn"><span
+                                                        class="transition-colors duration-200 items-center bg-charcoal hover:bg-pink border-pink group hover:cursor-pointer no-underline text-left break-words justify-start lg:min-w-button-lg md:h-button-lg px-2 py-2 w-full flex"><span
+                                                            class="group-hover:prose-charcoal break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-lg font-bold font-CircularStd tracking-normal prose-white">Get
+                                                            in<span class=" whitespace-nowrap break-all">
+                                                                touch&nbsp;&nbsp;<svg viewBox="0 0 15 15" fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                    class="inline transform -translate-y-px group-hover:prose-charcoal duration-200 w-[20px] h-[20px] prose-white">
+                                                                    <path
+                                                                        d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
+                                                                        fill="currentColor" fill-rule="evenodd"
+                                                                        clip-rule="evenodd"></path>
+                                                                </svg></span></span></span></span></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/$--><!--$-->
+                <div
+                    class="grid xxs:grid-cols-[16px_repeat(4,_1fr)_16px] xs:grid-cols-[6.865%_repeat(4,_1fr)_6.865%] relative 2xl:pt-[221px] xl:pt-[147px] md:pt-[147px] xxs:pt-[91px] 2xl:pt-[91px] xl:pt-[60px] xxs:pt-[40px] 2xl:pb-[91px] xl:pb-[60px] xxs:pb-[40px]">
+                    <div class="col-span-6 xxs:col-span-4 xxs:col-start-2">
+                        <div class="md:mb-[48px] xxs:mb-[32px]">
+                            <p
+                                class="xs:text-base xxs:text-sm mobileTitle break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-SometypeMono tracking-normal prose-charcoal">
+                                Trusted by world-class businesses –&nbsp;</p>
+                        </div>
+                        <div class="relative grid lg:grid-cols-4 sm:grid-cols-2 xxs:grid-cols-1"><svg width="410"
+                                height="410" viewBox="0 0 410 410" fill="none"
+                                class="absolute m-auto lg:col-start-3 sm:col-start-2 sm:row-start-1 xxs:row-start-2 translate-y-[-50%] translate-x-[-50%] xl:w-[410px] md:w-[345px] xxs:w-[233px] prose-light_gray"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M253.846 190.288C247.532 169.294 228.052 154 205 154C176.833 154 154 176.833 154 205C154 233.167 176.833 256 205 256C230.838 256 252.189 236.785 255.542 211.865"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                                <path
+                                    d="M301.697 176.143C289.255 134.961 250.872 104.962 205.451 104.962C149.952 104.962 104.961 149.75 104.961 205C104.961 260.25 149.952 305.038 205.451 305.038C256.362 305.038 298.431 267.348 305.038 218.467"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                                <path
+                                    d="M350.993 161.431C332.208 99.2551 274.258 53.9615 205.681 53.9615C121.888 53.9615 53.9609 121.584 53.9609 205C53.9609 288.416 121.888 356.038 205.681 356.038C282.547 356.038 346.063 299.133 356.038 225.332"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                                <path
+                                    d="M402.186 146.154C376.815 62.1757 298.544 1 205.92 1C92.746 1 1 92.3339 1 205C1 317.666 92.746 409 205.92 409C309.74 409 395.527 332.141 409 232.462"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                            </svg>
+                            <div
+                                class="lg:col-span-2 sm:col-span-1 xxs:col-span-1 2xl:w-[62%] xl:w-[75%] xxs:w-[90%] xxs:mb-[193px] sm:mb-auto z-10">
+                                <div>
+                                    <h2
+                                        class="prose break-words max-w-title relative md:text-3xl xs:text-2xl xxs:text-xl font-bold prose-charcoal font-CircularStd md:min-h-3xl xs:min-h-2xl xxs:min-h-xl">
+                                        <span><span class="prose-pink decoration-pink font-black relative z-[1]">Global
+                                                reach</span></span><span><span class="font-black relative z-[1]"> across
+                                                industries &amp; sectors</span></span></h2>
+                                    <h2
+                                        class="prose break-words max-w-title relative md:text-3xl xs:text-2xl xxs:text-xl font-bold prose-charcoal font-CircularStd md:min-h-3xl xs:min-h-2xl xxs:min-h-xl">
+                                        <span><span class="relative z-[1]"></span></span></h2>
+                                    <p
+                                        class="min-h-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-charcoal">
+                                        <span><span class="relative z-[1]"></span></span></p>
+                                    <p
+                                        class="min-h-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-charcoal">
+                                        <span><span class="relative z-[1]"></span></span></p>
+                                    <p
+                                        class="min-h-lg break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-lg font-CircularStd tracking-normal prose-charcoal">
+                                        <span><span class="relative z-[1]">Our team have 20+ years delivering projects
+                                                on a global stage. Because of that experience, the world’s most exciting
+                                                and progressive companies trust us to solve their most complex customer
+                                                challenges.</span></span></p>
+                                    <p
+                                        class="min-h-lg break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-lg font-CircularStd tracking-normal prose-charcoal">
+                                        <span><span class="relative z-[1]"></span></span></p>
+                                    <p
+                                        class="min-h-lg break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-lg font-CircularStd tracking-normal prose-charcoal">
+                                        <span><span class="relative z-[1]">Here's who we're working with right
+                                                now:</span></span></p>
+                                </div>
+                            </div>
+                            <div class="col-start-1 row-start-2 lg:block xxs:hidden col-span-1"></div>
+                            <div class="ml-[-1px] mt-[-1px]">
+                                <div class=" h-full flex flex-col bg-white col-span-1">
+                                    <div
+                                        class="w-full relative 2xl:min-h-[320px] lg:min-h-[250px] xs:min-h-[320px] xxs:min-h-[250px]">
+                                        <div class="text-0 h-full w-full absolute inset-0"><img
+                                                alt="A graphic illustration with a screenshot from Google Ad's website, representing just a small part of the breadth of research we do for Google"
+                                                loading="lazy" decoding="async" data-nimg="fill" class="object-cover"
+                                                sizes="100vw"
+                                                srcset="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2Fa448afbb3aa44d10dff753d5cb345be7673f4cb4-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=640&amp;q=85 640w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2Fa448afbb3aa44d10dff753d5cb345be7673f4cb4-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=750&amp;q=85 750w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2Fa448afbb3aa44d10dff753d5cb345be7673f4cb4-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=828&amp;q=85 828w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2Fa448afbb3aa44d10dff753d5cb345be7673f4cb4-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=1080&amp;q=85 1080w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2Fa448afbb3aa44d10dff753d5cb345be7673f4cb4-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=1200&amp;q=85 1200w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2Fa448afbb3aa44d10dff753d5cb345be7673f4cb4-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=1920&amp;q=85 1920w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2Fa448afbb3aa44d10dff753d5cb345be7673f4cb4-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=2048&amp;q=85 2048w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2Fa448afbb3aa44d10dff753d5cb345be7673f4cb4-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=3840&amp;q=85 3840w"
+                                                src="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2Fa448afbb3aa44d10dff753d5cb345be7673f4cb4-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=3840&amp;q=85"
+                                                style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="border-r border-b border-l border-light_gray h-full flex flex-col justify-between gap-[39px] px-[36px] sm:pt-[16px] sm:pb-[26px] xxs:py-[40px]">
+                                        <div class=" flex flex-col gap-[16px]">
+                                            <p
+                                                class="mobileTitle break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-sm font-bold font-SometypeMono tracking-normal prose-pink">
+                                                STRATEGIC CUSTOMER INSIGHT</p>
+                                            <div class="w-[162px] h-[54px] relative bg-contain bg-no-repeat"
+                                                style="background-image:url('https://cdn.sanity.io/images/ppwzgrza/production/2f53828a0077cd9c3d8539baaf9fc7b13abf28fb-200x64.svg')">
+                                            </div>
+                                            <p
+                                                class="break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-charcoal">
+                                                Strategic research partner for acquisition teams in EMEA, USA, South
+                                                America, and APAC</p>
+                                        </div>
+                                        <div><a class="bg-gradient-to-b from-pink to-pink bg-[length:1px_1px] hover:bg-[length:1px_50px] bg-bottom bg-repeat-x prose group pb-[3px] hover:cursor-pointer duration-200 no-underline"
+                                                href="/services/UX-research"><span><span
+                                                        class="group-hover:prose-charcoal break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-normal font-SometypeMono tracking-normal prose-pink">UX<span
+                                                            class=" whitespace-nowrap break-all">
+                                                            Research&nbsp;&nbsp;<svg viewBox="0 0 15 15" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                class="inline transform -translate-y-px w-[20px] h-[20px]">
+                                                                <path
+                                                                    d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
+                                                                    fill="currentColor" fill-rule="evenodd"
+                                                                    clip-rule="evenodd"></path>
+                                                            </svg></span></span></span></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ml-[-1px] mt-[-1px]">
+                                <div class=" h-full flex flex-col bg-white col-span-1">
+                                    <div
+                                        class="w-full relative 2xl:min-h-[320px] lg:min-h-[250px] xs:min-h-[320px] xxs:min-h-[250px]">
+                                        <div class="text-0 h-full w-full absolute inset-0"><img
+                                                alt="An image showing the GEN+ user interface" loading="lazy"
+                                                decoding="async" data-nimg="fill" class="object-cover" sizes="100vw"
+                                                srcset="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2Ff2a9bd9df775fdde536c234de9a44a9cf4a90d69-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=640&amp;q=85 640w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2Ff2a9bd9df775fdde536c234de9a44a9cf4a90d69-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=750&amp;q=85 750w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2Ff2a9bd9df775fdde536c234de9a44a9cf4a90d69-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=828&amp;q=85 828w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2Ff2a9bd9df775fdde536c234de9a44a9cf4a90d69-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=1080&amp;q=85 1080w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2Ff2a9bd9df775fdde536c234de9a44a9cf4a90d69-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=1200&amp;q=85 1200w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2Ff2a9bd9df775fdde536c234de9a44a9cf4a90d69-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=1920&amp;q=85 1920w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2Ff2a9bd9df775fdde536c234de9a44a9cf4a90d69-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=2048&amp;q=85 2048w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2Ff2a9bd9df775fdde536c234de9a44a9cf4a90d69-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=3840&amp;q=85 3840w"
+                                                src="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2Ff2a9bd9df775fdde536c234de9a44a9cf4a90d69-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=3840&amp;q=85"
+                                                style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="border-r border-b border-l border-light_gray h-full flex flex-col justify-between gap-[39px] px-[36px] sm:pt-[16px] sm:pb-[26px] xxs:py-[40px]">
+                                        <div class=" flex flex-col gap-[16px]">
+                                            <p
+                                                class="mobileTitle break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-sm font-bold font-SometypeMono tracking-normal prose-green">
+                                                SUPPORTING IN-HOUSE TEAMS</p>
+                                            <div class="w-[162px] h-[54px] relative bg-contain bg-no-repeat"
+                                                style="background-image:url('https://cdn.sanity.io/images/ppwzgrza/production/775e4bd6344fbd867c532785ab00b7d7511b6a7e-150x64.png')">
+                                            </div>
+                                            <p
+                                                class="break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-charcoal">
+                                                Working with Logitech to develop innovative and integrated
+                                                hardware/software products</p>
+                                        </div>
+                                        <div><a class="bg-gradient-to-b from-green to-green bg-[length:1px_1px] hover:bg-[length:1px_50px] bg-bottom bg-repeat-x prose group pb-[3px] hover:cursor-pointer duration-200 no-underline"
+                                                href="/ux-team-augmentation-and-capability"><span><span
+                                                        class="group-hover:prose-charcoal break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-normal font-SometypeMono tracking-normal prose-green">Team<span
+                                                            class=" whitespace-nowrap break-all">
+                                                            Augmentation&nbsp;&nbsp;<svg viewBox="0 0 15 15" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                class="inline transform -translate-y-px w-[20px] h-[20px]">
+                                                                <path
+                                                                    d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
+                                                                    fill="currentColor" fill-rule="evenodd"
+                                                                    clip-rule="evenodd"></path>
+                                                            </svg></span></span></span></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ml-[-1px] mt-[-1px]">
+                                <div class=" h-full flex flex-col bg-white col-span-1">
+                                    <div
+                                        class="w-full relative 2xl:min-h-[320px] lg:min-h-[250px] xs:min-h-[320px] xxs:min-h-[250px]">
+                                        <div class="text-0 h-full w-full absolute inset-0"><img alt="" loading="lazy"
+                                                decoding="async" data-nimg="fill" class="object-cover" sizes="100vw"
+                                                srcset="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2F5a73c77a056474b7c8a23aad9627f0f46af9468d-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=640&amp;q=85 640w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2F5a73c77a056474b7c8a23aad9627f0f46af9468d-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=750&amp;q=85 750w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2F5a73c77a056474b7c8a23aad9627f0f46af9468d-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=828&amp;q=85 828w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2F5a73c77a056474b7c8a23aad9627f0f46af9468d-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=1080&amp;q=85 1080w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2F5a73c77a056474b7c8a23aad9627f0f46af9468d-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=1200&amp;q=85 1200w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2F5a73c77a056474b7c8a23aad9627f0f46af9468d-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=1920&amp;q=85 1920w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2F5a73c77a056474b7c8a23aad9627f0f46af9468d-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=2048&amp;q=85 2048w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2F5a73c77a056474b7c8a23aad9627f0f46af9468d-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=3840&amp;q=85 3840w"
+                                                src="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2F5a73c77a056474b7c8a23aad9627f0f46af9468d-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=3840&amp;q=85"
+                                                style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="border-r border-b border-l border-light_gray h-full flex flex-col justify-between gap-[39px] px-[36px] sm:pt-[16px] sm:pb-[26px] xxs:py-[40px]">
+                                        <div class=" flex flex-col gap-[16px]">
+                                            <p
+                                                class="mobileTitle break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-sm font-bold font-SometypeMono tracking-normal prose-green">
+                                                SERVICE DESIGN &amp; CAPABILITY</p>
+                                            <div class="w-[162px] h-[54px] relative bg-contain bg-no-repeat"
+                                                style="background-image:url('https://cdn.sanity.io/images/ppwzgrza/production/1be42cce77781550851b364166a18f38a8c2394b-200x43.svg')">
+                                            </div>
+                                            <p
+                                                class="break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-charcoal">
+                                                A complete revision of complex global processes, orientated around the
+                                                customer experience</p>
+                                        </div>
+                                        <div><a class="bg-gradient-to-b from-green to-green bg-[length:1px_1px] hover:bg-[length:1px_50px] bg-bottom bg-repeat-x prose group pb-[3px] hover:cursor-pointer duration-200 no-underline"
+                                                href="/ux-team-augmentation-and-capability"><span><span
+                                                        class="group-hover:prose-charcoal break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-normal font-SometypeMono tracking-normal prose-green">Service<span
+                                                            class=" whitespace-nowrap break-all"> Design&nbsp;&nbsp;<svg
+                                                                viewBox="0 0 15 15" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                class="inline transform -translate-y-px w-[20px] h-[20px]">
+                                                                <path
+                                                                    d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
+                                                                    fill="currentColor" fill-rule="evenodd"
+                                                                    clip-rule="evenodd"></path>
+                                                            </svg></span></span></span></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ml-[-1px] mt-[-1px]">
+                                <div class=" h-full flex flex-col bg-white col-span-1">
+                                    <div
+                                        class="w-full relative 2xl:min-h-[320px] lg:min-h-[250px] xs:min-h-[320px] xxs:min-h-[250px]">
+                                        <div class="text-0 h-full w-full absolute inset-0"><img alt="" loading="lazy"
+                                                decoding="async" data-nimg="fill" class="object-cover" sizes="100vw"
+                                                srcset="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2F6f30df10cddd9ba70655e7256a3772a373452862-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=640&amp;q=85 640w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2F6f30df10cddd9ba70655e7256a3772a373452862-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=750&amp;q=85 750w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2F6f30df10cddd9ba70655e7256a3772a373452862-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=828&amp;q=85 828w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2F6f30df10cddd9ba70655e7256a3772a373452862-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=1080&amp;q=85 1080w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2F6f30df10cddd9ba70655e7256a3772a373452862-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=1200&amp;q=85 1200w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2F6f30df10cddd9ba70655e7256a3772a373452862-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=1920&amp;q=85 1920w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2F6f30df10cddd9ba70655e7256a3772a373452862-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=2048&amp;q=85 2048w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2F6f30df10cddd9ba70655e7256a3772a373452862-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=3840&amp;q=85 3840w"
+                                                src="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2F6f30df10cddd9ba70655e7256a3772a373452862-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=3840&amp;q=85"
+                                                style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="border-r border-b border-l border-light_gray h-full flex flex-col justify-between gap-[39px] px-[36px] sm:pt-[16px] sm:pb-[26px] xxs:py-[40px]">
+                                        <div class=" flex flex-col gap-[16px]">
+                                            <p
+                                                class="mobileTitle break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-sm font-bold font-SometypeMono tracking-normal prose-blue">
+                                                PRODUCT DESIGN PROGRAMME</p>
+                                            <div class="w-[162px] h-[54px] relative bg-contain bg-no-repeat"
+                                                style="background-image:url('https://cdn.sanity.io/images/ppwzgrza/production/b6a46a3ca955cffa6c7c0c354cbeb3215c85ac5f-200x58.svg')">
+                                            </div>
+                                            <p
+                                                class="break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-charcoal">
+                                                Ground up rethink of legacy services and delivering a suite of digital
+                                                products over a 3-year programme</p>
+                                        </div>
+                                        <div><a class="bg-gradient-to-b from-blue to-blue bg-[length:1px_1px] hover:bg-[length:1px_50px] bg-bottom bg-repeat-x prose group pb-[3px] hover:cursor-pointer duration-200 no-underline"
+                                                href="/services/ux-ui-and-product-design"><span><span
+                                                        class="group-hover:prose-charcoal break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-normal font-SometypeMono tracking-normal prose-blue">Product<span
+                                                            class=" whitespace-nowrap break-all"> Design&nbsp;&nbsp;<svg
+                                                                viewBox="0 0 15 15" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                class="inline transform -translate-y-px w-[20px] h-[20px]">
+                                                                <path
+                                                                    d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
+                                                                    fill="currentColor" fill-rule="evenodd"
+                                                                    clip-rule="evenodd"></path>
+                                                            </svg></span></span></span></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ml-[-1px] mt-[-1px]">
+                                <div class=" h-full flex flex-col bg-white col-span-1">
+                                    <div
+                                        class="w-full relative 2xl:min-h-[320px] lg:min-h-[250px] xs:min-h-[320px] xxs:min-h-[250px]">
+                                        <div class="text-0 h-full w-full absolute inset-0"><img alt="" loading="lazy"
+                                                decoding="async" data-nimg="fill" class="object-cover" sizes="100vw"
+                                                srcset="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2F7ea6e606ab8b9d225d5268cd22393ddfa4fbc348-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=640&amp;q=85 640w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2F7ea6e606ab8b9d225d5268cd22393ddfa4fbc348-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=750&amp;q=85 750w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2F7ea6e606ab8b9d225d5268cd22393ddfa4fbc348-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=828&amp;q=85 828w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2F7ea6e606ab8b9d225d5268cd22393ddfa4fbc348-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=1080&amp;q=85 1080w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2F7ea6e606ab8b9d225d5268cd22393ddfa4fbc348-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=1200&amp;q=85 1200w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2F7ea6e606ab8b9d225d5268cd22393ddfa4fbc348-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=1920&amp;q=85 1920w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2F7ea6e606ab8b9d225d5268cd22393ddfa4fbc348-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=2048&amp;q=85 2048w, /_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2F7ea6e606ab8b9d225d5268cd22393ddfa4fbc348-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=3840&amp;q=85 3840w"
+                                                src="/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fppwzgrza%2Fproduction%2F7ea6e606ab8b9d225d5268cd22393ddfa4fbc348-624x500.png%3Fw%3D624%26h%3D500%26q%3D85%26auto%3Dformat&amp;w=3840&amp;q=85"
+                                                style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="border-r border-b border-l border-light_gray h-full flex flex-col justify-between gap-[39px] px-[36px] sm:pt-[16px] sm:pb-[26px] xxs:py-[40px]">
+                                        <div class=" flex flex-col gap-[16px]">
+                                            <p
+                                                class="mobileTitle break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-sm font-bold font-SometypeMono tracking-normal prose-pink">
+                                                USER TESTING &amp; PRODUCT FIXES</p>
+                                            <div class="w-[162px] h-[54px] relative bg-contain bg-no-repeat"
+                                                style="background-image:url('https://cdn.sanity.io/images/ppwzgrza/production/f1aecaa31bfe47da440b545507db3fad1ad4e1b7-207x55.svg')">
+                                            </div>
+                                            <p
+                                                class="break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-charcoal">
+                                                Defining new acquisition and onboarding journeys on the platform in UK
+                                                and DE.</p>
+                                        </div>
+                                        <div><a class="bg-gradient-to-b from-pink to-pink bg-[length:1px_1px] hover:bg-[length:1px_50px] bg-bottom bg-repeat-x prose group pb-[3px] hover:cursor-pointer duration-200 no-underline"
+                                                href="/services/UX-research"><span><span
+                                                        class="group-hover:prose-charcoal break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-normal font-SometypeMono tracking-normal prose-pink">Product<span
+                                                            class=" whitespace-nowrap break-all">
+                                                            Strategy&nbsp;&nbsp;<svg viewBox="0 0 15 15" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                class="inline transform -translate-y-px w-[20px] h-[20px]">
+                                                                <path
+                                                                    d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
+                                                                    fill="currentColor" fill-rule="evenodd"
+                                                                    clip-rule="evenodd"></path>
+                                                            </svg></span></span></span></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/$--><!--$-->
+                <div
+                    class="grid xxs:grid-cols-[16px_repeat(4,_1fr)_16px] xs:grid-cols-[6.865%_repeat(4,_1fr)_6.865%] relative 2xl:pt-[91px] xl:pt-[60px] xxs:pt-[40px] pb-10 lg:pb-12">
+                    <div class="col-span-6 xxs:col-span-4 xxs:col-start-2 px-4 md:px-6 lg:px-8">
+                        <h2
+                            class="break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-SometypeMono tracking-normal prose-charcoal">
+                            Our recent publishing –&nbsp;</h2>
+                        <div
+                            class="grid gap-4 md:gap-6 lg:gap-8 xl:gap-10 mt-6 sm:grid-cols-2 gap-4 md:gap-6 lg:gap-8 xl:gap-10 mt-6 md:grid-cols-3">
+                            <div class="relative group overflow-hidden">
+                                <div
+                                    class="relative z-10 px-14 py-20 sm:pt-14 sm:pb-0 md:px-6 md:pt-14 lg:p-14 lg:pr-20 flex flex-col gap-6 h-full">
+                                    <div>
+                                        <div
+                                            class="text-charcoal group-hover:underline underline-offset-4 decoration-1 text-xlg xl:text-2xl font-bold font-CircularStd [&amp;_div]:decoration-clone [&amp;_div]:bg-white [&amp;_div]:inline [&amp;_div]:pl-2 [&amp;_div]:pr-3 [&amp;_div]:py-0.5 xl:[&amp;_div]:py-0 max-w-[250px]">
+                                            <div><span class="prose-pink hover:prose-pink">Experience debt</span>: the
+                                                silent business growth <span
+                                                    class="prose-pink hover:prose-pink">killer</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-auto"><span
+                                            class="bg-white whitespace-nowrap font-SometypeMono text-charcoal group-hover:text-pink transition-colors py-2 px-2 border-b border-b-charcoal inline-flex gap-2 items-center">Read
+                                            more<svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                                class="w-5 h-5">
+                                                <path
+                                                    d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
+                                                    fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+                                            </svg></span></div>
+                                </div><a class="absolute inset-0 z-20"
+                                    href="/views/experience-debt-the-silent-business-growth-killer">
+                                    <div class="sr-only">
+                                        <div><span class="prose-pink hover:prose-pink">Experience debt</span>: the
+                                            silent business growth <span
+                                                class="prose-pink hover:prose-pink">killer</span></div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="relative group overflow-hidden">
+                                <div
+                                    class="relative z-10 px-14 py-20 sm:pt-14 sm:pb-0 md:px-6 md:pt-14 lg:p-14 lg:pr-20 flex flex-col gap-6 h-full">
+                                    <div>
+                                        <div
+                                            class="text-charcoal group-hover:underline underline-offset-4 decoration-1 text-xlg xl:text-2xl font-bold font-CircularStd [&amp;_div]:decoration-clone [&amp;_div]:bg-white [&amp;_div]:inline [&amp;_div]:pl-2 [&amp;_div]:pr-3 [&amp;_div]:py-0.5 xl:[&amp;_div]:py-0 max-w-[250px]">
+                                            <div>Strategic <span class="prose-pink hover:prose-pink">design
+                                                    solutions</span> exactly when you <span
+                                                    class="prose-pink hover:prose-pink">need them</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-auto"><span
+                                            class="bg-white whitespace-nowrap font-SometypeMono text-charcoal group-hover:text-pink transition-colors py-2 px-2 border-b border-b-charcoal inline-flex gap-2 items-center">Read
+                                            more<svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                                class="w-5 h-5">
+                                                <path
+                                                    d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
+                                                    fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+                                            </svg></span></div>
+                                </div><a class="absolute inset-0 z-20"
+                                    href="/views/strategic-design-solutions-exactly-when-you-need-them">
+                                    <div class="sr-only">
+                                        <div>Strategic <span class="prose-pink hover:prose-pink">design solutions</span>
+                                            exactly when you <span class="prose-pink hover:prose-pink">need them</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="relative group overflow-hidden">
+                                <div
+                                    class="relative z-10 px-14 py-20 sm:pt-14 sm:pb-0 md:px-6 md:pt-14 lg:p-14 lg:pr-20 flex flex-col gap-6 h-full">
+                                    <div>
+                                        <div
+                                            class="text-charcoal group-hover:underline underline-offset-4 decoration-1 text-xlg xl:text-2xl font-bold font-CircularStd [&amp;_div]:decoration-clone [&amp;_div]:bg-white [&amp;_div]:inline [&amp;_div]:pl-2 [&amp;_div]:pr-3 [&amp;_div]:py-0.5 xl:[&amp;_div]:py-0 max-w-[250px]">
+                                            <div>Different by <span class="prose-pink hover:prose-pink">design</span>:
+                                                how Whyze Health <span class="prose-pink hover:prose-pink">stands</span>
+                                                out</div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-auto"><span
+                                            class="bg-white whitespace-nowrap font-SometypeMono text-charcoal group-hover:text-pink transition-colors py-2 px-2 border-b border-b-charcoal inline-flex gap-2 items-center">Read
+                                            more<svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                                class="w-5 h-5">
+                                                <path
+                                                    d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
+                                                    fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+                                            </svg></span></div>
+                                </div><a class="absolute inset-0 z-20"
+                                    href="/views/different-by-design-how-whyze-health-stands-out">
+                                    <div class="sr-only">
+                                        <div>Different by <span class="prose-pink hover:prose-pink">design</span>: how
+                                            Whyze Health <span class="prose-pink hover:prose-pink">stands</span> out
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute inset-y-0 w-full max-w-[1240px] left-1/2 -translate-x-1/2 pointer-events-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 100 1.5"
+                            class="absolute top-0 right-0 w-full h-[2px]" preserveAspectRatio="none"
+                            shape-rendering="geometricPrecision">
+                            <line x1="0" y1="0" x2="100" y2="0" stroke="#e9e9e9" stroke-width="1.5"></line>
+                        </svg><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 100 1.5"
+                            class="absolute -bottom-px right-0 w-full h-[2px]" preserveAspectRatio="none"
+                            shape-rendering="geometricPrecision">
+                            <line x1="0" y1="0" x2="100" y2="0" stroke="#e9e9e9" stroke-width="1.5"></line>
+                        </svg></div>
+                </div>
+                <div class="h-14 xl:h-[120px]"></div><!--/$--><!--$-->
+                <div class="flex w-full">
+                    <div
+                        class="xs:pl-[8.45%] xs:pr-[5.28%] xxs:px-[16px] lg:w-[69%] md:w-[51.5%] xxs:w-full bg-black 2xl:pt-[131px] md:pt-[87px] 2xl:pb-[147px] md:pb-[98px] xxs:py-[72px] 2xl:gap-y-[74px] md:gap-y-[48px] xxs:gap-y-[32px] col-start-1 md:row-start-1 xxs:row-start-auto md:col-span-4 xs:col-span-2 xxs:col-span-1 grid grid-cols-1 auto-rows-min relative">
+                        <div class="tabledTitle">
+                            <div>
+                                <h2
+                                    class="prose break-words max-w-title relative md:text-3xl xs:text-2xl xxs:text-xl font-bold prose-white font-CircularStd md:min-h-3xl xs:min-h-2xl xxs:min-h-xl">
+                                    <span><span class="relative z-[1]">Learn more on what we do</span></span></h2>
+                                <p
+                                    class="min-h-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-white">
+                                    <span><span class="relative z-[1]"></span></span></p>
+                                <p
+                                    class="min-h-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-white">
+                                    <span><span class="relative z-[1]"><a
+                                                class="prose group pb-0 hover:cursor-pointer duration-200 no-underline"
+                                                href="/services/our-approach"><span><span
+                                                        class="group-hover:prose-white text-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-normal font-CircularStd tracking-normal prose-pink">–
+                                                        Our Approach</span></span></a></span></span></p>
+                                <p
+                                    class="min-h-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-white">
+                                    <span><span class="relative z-[1]"><a
+                                                class="prose group pb-0 hover:cursor-pointer duration-200 no-underline"
+                                                href="/services/ux-ui-and-product-design"><span><span
+                                                        class="group-hover:prose-white text-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-normal font-CircularStd tracking-normal prose-pink">–&nbsp;UX/UI
+                                                        &amp; Product Design</span></span></a></span></span></p>
+                                <p
+                                    class="min-h-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-white">
+                                    <span><span class="relative z-[1]"><a
+                                                class="prose group pb-0 hover:cursor-pointer duration-200 no-underline"
+                                                href="/services/UX-research"><span><span
+                                                        class="group-hover:prose-white text-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-normal font-CircularStd tracking-normal prose-pink">–
+                                                        UX Research &amp; Product
+                                                        Strategy</span></span></a></span></span></p>
+                                <p
+                                    class="min-h-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-white">
+                                    <span><span class="relative z-[1]"><a
+                                                class="prose group pb-0 hover:cursor-pointer duration-200 no-underline"
+                                                href="/services/services"><span><span
+                                                        class="group-hover:prose-white text-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-normal font-CircularStd tracking-normal prose-pink">–
+                                                        Service Design</span></span></a></span></span></p>
+                                <p
+                                    class="min-h-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-white">
+                                    <span><span class="relative z-[1]"><a
+                                                class="prose group pb-0 hover:cursor-pointer duration-200 no-underline"
+                                                href="/services/ux-ai-and-innovation"><span><span
+                                                        class="group-hover:prose-white text-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-normal font-CircularStd tracking-normal prose-pink">–
+                                                        UX/AI &amp; Innovation</span></span></a></span></span></p>
+                                <p
+                                    class="min-h-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-white">
+                                    <span><span class="relative z-[1]"><a
+                                                class="prose group pb-0 hover:cursor-pointer duration-200 no-underline"
+                                                href="/fractional-head-of-design"><span><span
+                                                        class="group-hover:prose-white text-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-normal font-CircularStd tracking-normal prose-pink">–
+                                                        Fractional Head of UX Design</span></span></a></span></span></p>
+                                <p
+                                    class="min-h-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-white">
+                                    <span><span class="relative z-[1]"><a
+                                                class="prose group pb-0 hover:cursor-pointer duration-200 no-underline"
+                                                href="/ux-team-augmentation-and-capability"><span><span
+                                                        class="group-hover:prose-white text-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-normal font-CircularStd tracking-normal prose-pink">–&nbsp;UX
+                                                        Team Augmentation &amp;
+                                                        Capability</span></span></a></span></span></p>
+                                <p
+                                    class="min-h-lg break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-lg font-CircularStd tracking-normal prose-white">
+                                    <span><span class="relative z-[1]"></span></span></p>
+                                <p
+                                    class="min-h-lg break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-lg font-CircularStd tracking-normal prose-white">
+                                    <span><span class="relative z-[1]">Or get in touch to talk about what we can do for
+                                            your organisation.</span></span></p>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap md:gap-[36px] xxs:gap-[32px] items-center"><a href="/contact"><span
+                                    aria-label="Contact us" class="btn"><span
+                                        class="transition-colors duration-200 items-center inline-flex justify-center hover:bg-pink border-pink group hover:cursor-pointer no-underline text-left break-words bg-transparent border-[3px] justify-start min-w-button-md h-button-sm px-2 py-2"><span
+                                            class="group-hover:prose-charcoal break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-bold font-CircularStd tracking-normal prose-pink"><span
+                                                class="flex">Contact us</span></span></span></span></a><span><a
+                                    href="mailto:hello@eachandother.com"
+                                    class="border-white hover:border-pink border-b-[1px] prose group pb-[3px] hover:cursor-pointer duration-200 no-underline"><span
+                                        class="group-hover:prose-pink break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-lg font-normal font-SometypeMono tracking-normal prose-white"><span
+                                            class=" whitespace-nowrap break-all"> hello@eachandother.com&nbsp;&nbsp;<svg
+                                                width="14" height="12" viewBox="0 0 14 12" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                class="inline transform -translate-y-px w-[20px] h-[20px]">
+                                                <path
+                                                    d="M1.82676 10.0872C1.84408 10.1281 1.86945 10.1652 1.90135 10.1961C1.93227 10.228 1.9693 10.2534 2.01021 10.2707C2.05113 10.288 2.09511 10.2969 2.13954 10.2969C2.18397 10.2969 2.22795 10.288 2.26887 10.2707C2.30978 10.2534 2.34681 10.228 2.37773 10.1961L11.327 1.25529V8.93707C11.327 9.02731 11.3629 9.11386 11.4267 9.17768C11.4905 9.24149 11.5771 9.27734 11.6673 9.27734C11.7576 9.27734 11.8441 9.24149 11.9079 9.17768C11.9717 9.11386 12.0076 9.02731 12.0076 8.93707V0.430121C12.0076 0.339874 11.9717 0.253323 11.9079 0.189509C11.8441 0.125694 11.7576 0.0898438 11.6673 0.0898438H3.16037C3.07013 0.0898438 2.98357 0.125694 2.91976 0.189509C2.85595 0.253323 2.8201 0.339874 2.8201 0.430121C2.8201 0.520369 2.85595 0.60692 2.91976 0.670734C2.98357 0.734549 3.07013 0.770399 3.16037 0.770399H10.8421L1.90135 9.7197C1.86945 9.75063 1.84408 9.78765 1.82676 9.82857C1.80944 9.86949 1.80052 9.91347 1.80052 9.9579C1.80052 10.0023 1.80944 10.0463 1.82676 10.0872Z"
+                                                    fill="currentColor"></path>
+                                                <path
+                                                    d="M-1.26324 13.701H13.709C13.7992 13.701 13.8858 13.7368 13.9496 13.8006C14.0134 13.8644 14.0493 13.951 14.0493 14.0412C14.0493 14.1315 14.0134 14.218 13.9496 14.2818C13.8858 14.3457 13.7992 14.3815 13.709 14.3815H-1.26324C-1.35349 14.3815 -1.44004 14.3457 -1.50385 14.2818C-1.56766 14.218 -1.60352 14.1315 -1.60352 14.0412C-1.60352 13.951 -1.56766 13.8644 -1.50385 13.8006C-1.44004 13.7368 -1.35349 13.701 -1.26324 13.701Z"
+                                                    fill="currentColor"></path>
+                                            </svg></span></span></a></span></div>
+                    </div>
+                    <div class="md:flex xxs:hidden flex-col w-[48.5%]">
+                        <div class="h-full undefined"></div>
+                        <div class="h-full bg-charcoal"></div>
+                    </div>
+                </div><!--/$-->
+            </div>
+            <div
+                class="grid xxs:grid-cols-[16px_repeat(4,_1fr)_16px] xs:grid-cols-[6.865%_repeat(4,_1fr)_6.865%] relative bg-charcoal flex-[0_0_auto] xs:px-[0px] xxs:px-[16px] 2xl:pt-[160px] xl:pt-[108px] md:pt-[72px] xxs:pt-[48px] 2xl:pb-[160px] md:pb-[72px] xs:pb-[48px] xxs:pb-[28px] 2xl:pt-[91px] xl:pt-[60px] xxs:pt-[40px] 2xl:pb-[91px] xl:pb-[60px] xxs:pb-[40px]">
+                <div class="col-span-6 xxs:col-span-4 xxs:col-start-2">
+                    <div
+                        class="col-start-1 md:row-start-1 xxs:row-start-auto md:col-span-4 xs:col-span-2 xxs:col-span-1 grid lg:grid-cols-4 xs:grid-cols-2 xxs:grid-cols-1 auto-rows-min relative">
+                        <div class="flex flex-col justify-between pr-[10px] gap-[24px] md:col-span-1 xs:col-span-2">
+                            <div><a href="/"><span class="sr-only">Homepage</span><svg width="62" height="80"
+                                        viewBox="0 0 62 80"
+                                        class="prose-pink md:w-[62px] md:h-[80px] xxs:w-[42px] xxs-:h-[54px]"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path id="Intro/Ampersand Logo" fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M28.9996 66C20.7166 66 14 59.5085 14 51.5C14 43.4915 20.7166 37 28.9996 37C29.1756 37 29.3498 37.009 29.5232 37.018C29.669 37.0234 29.8139 37.0288 29.9588 37.0379C30.7438 37.0946 31.5075 37.2127 32.2516 37.3849V45.3077H42.5109C43.4381 47.1925 44 49.2746 44 51.5C44 59.5085 37.2834 66 28.9996 66ZM62 31.9508H32.077H29.5146C29.4644 31.9389 29.4143 31.9233 29.3678 31.9233C23.6503 31.9233 19.0176 27.7005 19.0176 22.4922C19.0176 17.2812 23.6503 13.0584 29.3678 13.0584C32.5119 13.0584 35.3187 14.3412 37.2148 16.3599L44.8484 5.38539C40.7253 2.03248 35.3396 0 29.4435 0C16.4715 0 5.95451 9.82566 5.95451 21.9453C5.95451 25.6405 6.93265 29.1209 8.66011 32.1756C3.33642 37.2426 0 44.2164 0 51.9738C0 67.4509 13.105 80 29.2684 80C45.4328 80 58.5369 67.4509 58.5369 51.9738C58.5369 49.7945 58.2251 47.6941 57.7146 45.6671H62V31.9508Z"
+                                            fill="currentColor"></path>
+                                    </svg></a></div>
+                            <div class="footer-pink">
+                                <div>
+                                    <p
+                                        class="min-h-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-white">
+                                        <span><span class="relative z-[1]"><span><a href="mailto:hello@eachandother.com"
+                                                        class="prose group pb-0 hover:cursor-pointer duration-200 no-underline"><span
+                                                            class="group-hover:prose-white text-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-normal font-CircularStd tracking-normal prose-pink">hello@eachandother.com</span></a></span></span></span>
+                                    </p>
+                                    <p
+                                        class="min-h-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-white">
+                                        <span><span class="relative z-[1]"></span></span></p>
+                                    <p
+                                        class="min-h-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-white">
+                                        <span><span class="relative z-[1]">Huckletree D2</span></span></p>
+                                    <p
+                                        class="min-h-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-white">
+                                        <span><span class="relative z-[1]">The Academy</span></span></p>
+                                    <p
+                                        class="min-h-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-white">
+                                        <span><span class="relative z-[1]">42 Pearse Street</span></span></p>
+                                    <p
+                                        class="min-h-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-white">
+                                        <span><span class="relative z-[1]">Dublin 2</span></span></p>
+                                    <p
+                                        class="min-h-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-white">
+                                        <span><span class="relative z-[1]">D02 HV59</span></span></p>
+                                    <p
+                                        class="min-h-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-white">
+                                        <span><span class="relative z-[1]"></span></span></p>
+                                </div>
+                            </div>
+                            <ul class="flex md:gap-[10px] xxs:gap-[24px]">
+                                <li class=""><a href="https://www.linkedin.com/company/theothershq"
+                                        aria-label="LinkedIn" class="btn"><span
+                                            class="transition-colors duration-200 items-center inline-flex justify-center"><span
+                                                class=" whitespace-nowrap break-all"><svg width="30" height="30"
+                                                    class="inline transform -translate-y-px group-hover:prose-charcoal duration-200 w-[30px] h-[30px] prose-white"
+                                                    viewBox="0 0 30 30" fill="black" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M0.601562 14.9996C0.601562 7.04661 7.04856 0.599609 15.0016 0.599609C22.9546 0.599609 29.4016 7.04661 29.4016 14.9996C29.4016 22.9526 22.9546 29.3996 15.0016 29.3996C7.04856 29.3996 0.601562 22.9526 0.601562 14.9996ZM8.5625 20.968H11.4785V11.584H8.5625V20.968ZM10.0009 10.4316C9.07987 10.4316 8.48438 9.77913 8.48438 8.97213C8.48438 8.14862 9.09787 7.51562 10.0384 7.51562C10.9789 7.51562 11.5549 8.14862 11.5729 8.97213C11.5729 9.77913 10.9789 10.4316 10.0009 10.4316ZM19.209 20.9681H22.125V15.4196C22.125 12.6566 20.6865 11.3711 18.768 11.3711C17.1945 11.3711 16.254 12.2741 15.87 12.8861H15.8115L15.678 11.5826H13.1445C13.1835 12.4256 13.221 13.4051 13.221 14.5766V20.9666H16.1385V15.5561C16.1385 15.2876 16.158 15.0176 16.236 14.8271C16.4475 14.2916 16.926 13.7351 17.7315 13.7351C18.786 13.7351 19.209 14.5571 19.209 15.7676V20.9681Z"
+                                                        fill="currentColor"></path>
+                                                </svg></span></span></a></li>
+                                <li class=""><a href="https://instagram.com/theothershq" aria-label="Instagram"
+                                        class="btn"><span
+                                            class="transition-colors duration-200 items-center inline-flex justify-center"><span
+                                                class=" whitespace-nowrap break-all"><svg width="30" height="30"
+                                                    class="inline transform -translate-y-px group-hover:prose-charcoal duration-200 w-[30px] h-[30px] prose-white"
+                                                    viewBox="0 0 29 29" fill="black" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M20.2452 9.97727C19.9929 9.32321 19.4759 8.80623 18.8219 8.5539C18.3759 8.38863 17.9048 8.30126 17.4293 8.29563C16.6383 8.25954 16.4012 8.25195 14.3986 8.25195C12.396 8.25195 12.1588 8.25954 11.3679 8.29562C10.8923 8.30125 10.4213 8.38861 9.9753 8.55389C9.32124 8.80622 8.80427 9.32319 8.55193 9.97725C8.38666 10.4232 8.2993 10.8943 8.29366 11.3699C8.25759 12.1608 8.25 12.398 8.25 14.4005C8.25 16.403 8.2576 16.6403 8.29366 17.4312C8.29929 17.9068 8.38665 18.3779 8.55193 18.8238C8.80427 19.4779 9.32124 19.9949 9.9753 20.2472C10.4213 20.4125 10.8923 20.4998 11.3679 20.5055C12.1587 20.5415 12.3959 20.5491 14.3986 20.5491C16.4013 20.5491 16.6385 20.5415 17.4293 20.5055C17.9048 20.4998 18.3759 20.4125 18.8219 20.2472C19.4759 19.9949 19.9929 19.4779 20.2452 18.8238C20.4105 18.3779 20.4979 17.9068 20.5035 17.4312C20.5395 16.6403 20.5472 16.4032 20.5472 14.4005C20.5472 12.3979 20.5396 12.1608 20.5035 11.3699C20.4979 10.8943 20.4105 10.4232 20.2452 9.97727ZM14.3982 18.2515C12.2712 18.2515 10.5469 16.5272 10.5469 14.4002C10.5469 12.2731 12.2712 10.5488 14.3982 10.5488C16.5253 10.5488 18.2496 12.2731 18.2496 14.4002C18.2496 15.4216 17.8438 16.4012 17.1216 17.1235C16.3993 17.8458 15.4197 18.2515 14.3982 18.2515ZM17.5039 10.3961C17.5039 10.8932 17.9068 11.2961 18.4039 11.2961C18.901 11.2961 19.3039 10.8932 19.3039 10.3961C19.3039 9.89904 18.901 9.49609 18.4039 9.49609C17.9068 9.49609 17.5039 9.89904 17.5039 10.3961Z"
+                                                        fill="currentColor"></path>
+                                                    <circle cx="14.3985" cy="14.4004" r="2.50004" fill="currentColor">
+                                                    </circle>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M0 14.4C0 6.4471 6.4471 1.95598e-10 14.4 1.95598e-10C18.2191 -1.98912e-05 21.8818 1.51711 24.5824 4.21764C27.2829 6.91817 28.8 10.5809 28.8 14.4C28.8 22.3529 22.3529 28.8 14.4 28.8C6.4471 28.8 0 22.3529 0 14.4ZM21.5047 19.3132C21.7229 18.7304 21.8408 18.1148 21.8533 17.4926V17.4927C21.8898 16.6927 21.8984 16.4373 21.8984 14.4004C21.8984 12.3635 21.8898 12.1081 21.8533 11.3081C21.8408 10.6859 21.7229 10.0704 21.5047 9.48758C21.1151 8.48011 20.3187 7.6837 19.3112 7.29416C18.7285 7.07589 18.1129 6.95801 17.4907 6.94553C16.6907 6.909 16.4353 6.90039 14.3984 6.90039C12.3616 6.90039 12.1061 6.909 11.3061 6.94553C10.684 6.95801 10.0684 7.07589 9.48562 7.29416C8.47816 7.6837 7.68174 8.48012 7.2922 9.48759C7.07394 10.0704 6.95606 10.6859 6.94357 11.3081C6.90705 12.1081 6.89844 12.3635 6.89844 14.4004C6.89844 16.4373 6.90705 16.6927 6.94359 17.4927C6.95607 18.1149 7.07395 18.7304 7.29222 19.3132C7.68176 20.3207 8.47818 21.1171 9.48564 21.5066C10.0684 21.7249 10.684 21.8428 11.3062 21.8553C12.1061 21.8918 12.3616 21.9004 14.3984 21.9004C16.4353 21.9004 16.6907 21.8918 17.4907 21.8552C18.1129 21.8427 18.7285 21.7248 19.3113 21.5066C20.3187 21.117 21.1151 20.3206 21.5047 19.3132Z"
+                                                        fill="currentColor"></path>
+                                                </svg></span></span></a></li>
+                            </ul>
+                        </div>
+                        <div class="mt-[48px] pr-[10px]">
+                            <h4
+                                class="prose break-words max-w-title relative md:text-xl xxs:text-lg font-bold prose-white font-CircularStd md:text-xl xxs:text-lg md:font-bold xxs:font-black">
+                                Services</h4>
+                            <ul class="flex flex-col gap-4 md:mt-[28px] xxs:mt-[16px] md:gap-[28px] xxs:gap-[12px]">
+                                <li class="lg:-mb-4"><a
+                                        class="prose group pb-0 hover:cursor-pointer duration-200 no-underline"
+                                        href="/services/our-approach"><span><span
+                                                class="group-hover:prose-pink md:prose-white xxs:prose-dark_gray break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-normal font-SometypeMono tracking-normal prose-white">Our
+                                                approach</span></span></a></li>
+                                <li class="lg:-mb-4"><a
+                                        class="prose group pb-0 hover:cursor-pointer duration-200 no-underline"
+                                        href="/services/ux-ui-and-product-design"><span><span
+                                                class="group-hover:prose-pink md:prose-white xxs:prose-dark_gray break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-normal font-SometypeMono tracking-normal prose-white">UX
+                                                &amp; UI Design</span></span></a></li>
+                                <li class="lg:-mb-4"><a
+                                        class="prose group pb-0 hover:cursor-pointer duration-200 no-underline"
+                                        href="/services/UX-research"><span><span
+                                                class="group-hover:prose-pink md:prose-white xxs:prose-dark_gray break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-normal font-SometypeMono tracking-normal prose-white">UX
+                                                Research</span></span></a></li>
+                                <li class="lg:-mb-4"><a
+                                        class="prose group pb-0 hover:cursor-pointer duration-200 no-underline"
+                                        href="/fractional-head-of-design"><span><span
+                                                class="group-hover:prose-pink md:prose-white xxs:prose-dark_gray break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-normal font-SometypeMono tracking-normal prose-white">Head
+                                                of UX</span></span></a></li>
+                                <li class="lg:-mb-4"><a
+                                        class="prose group pb-0 hover:cursor-pointer duration-200 no-underline"
+                                        href="/ux-team-augmentation-and-capability"><span><span
+                                                class="group-hover:prose-pink md:prose-white xxs:prose-dark_gray break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-normal font-SometypeMono tracking-normal prose-white">UX
+                                                Capability</span></span></a></li>
+                                <li class="lg:-mb-4"><a
+                                        class="prose group pb-0 hover:cursor-pointer duration-200 no-underline"
+                                        href="/services/ux-ai-and-innovation"><span><span
+                                                class="group-hover:prose-pink md:prose-white xxs:prose-dark_gray break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-normal font-SometypeMono tracking-normal prose-white">UX
+                                                &amp; AI</span></span></a></li>
+                            </ul>
+                        </div>
+                        <div class="mt-[48px] pr-[10px]">
+                            <h4
+                                class="prose break-words max-w-title relative md:text-xl xxs:text-lg font-bold prose-white font-CircularStd md:text-xl xxs:text-lg md:font-bold xxs:font-black">
+                                About us</h4>
+                            <ul class="flex flex-col gap-4 md:mt-[28px] xxs:mt-[16px] md:gap-[28px] xxs:gap-[12px]">
+                                <li class="lg:-mb-4"><a
+                                        class="prose group pb-0 hover:cursor-pointer duration-200 no-underline"
+                                        href="/about-us/about-us"><span><span
+                                                class="group-hover:prose-pink md:prose-white xxs:prose-dark_gray break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-normal font-SometypeMono tracking-normal prose-white">About
+                                                us</span></span></a></li>
+                                <li class="lg:-mb-4"><a
+                                        class="prose group pb-0 hover:cursor-pointer duration-200 no-underline"
+                                        href="/about-us/our-team"><span><span
+                                                class="group-hover:prose-pink md:prose-white xxs:prose-dark_gray break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-normal font-SometypeMono tracking-normal prose-white">Our
+                                                Team</span></span></a></li>
+                                <li class="lg:-mb-4"><a
+                                        class="prose group pb-0 hover:cursor-pointer duration-200 no-underline"
+                                        href="/about-us/education-and-community"><span><span
+                                                class="group-hover:prose-pink md:prose-white xxs:prose-dark_gray break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-normal font-SometypeMono tracking-normal prose-white">Education
+                                                &amp; Community</span></span></a></li>
+                                <li class="lg:-mb-4"><a
+                                        class="prose group pb-0 hover:cursor-pointer duration-200 no-underline"
+                                        href="/about-us/careers"><span><span
+                                                class="group-hover:prose-pink md:prose-white xxs:prose-dark_gray break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-normal font-SometypeMono tracking-normal prose-white">Careers</span></span></a>
+                                </li>
+                                <li class="lg:-mb-4"><a
+                                        class="prose group pb-0 hover:cursor-pointer duration-200 no-underline"
+                                        href="/partners"><span><span
+                                                class="group-hover:prose-pink md:prose-white xxs:prose-dark_gray break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-normal font-SometypeMono tracking-normal prose-white">Partners</span></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-[48px] pr-[10px]">
+                            <h4
+                                class="prose break-words max-w-title relative md:text-xl xxs:text-lg font-bold prose-white font-CircularStd md:text-xl xxs:text-lg md:font-bold xxs:font-black">
+                                News &amp; Views</h4>
+                            <ul class="flex flex-col gap-4 md:mt-[28px] xxs:mt-[16px] md:gap-[28px] xxs:gap-[12px]">
+                                <li class="lg:-mb-4"><a
+                                        class="prose group pb-0 hover:cursor-pointer duration-200 no-underline"
+                                        href="/views"><span><span
+                                                class="group-hover:prose-pink md:prose-white xxs:prose-dark_gray break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-normal font-SometypeMono tracking-normal prose-white">Views</span></span></a>
+                                </li>
+                                <li class="lg:-mb-4"><a
+                                        class="prose group pb-0 hover:cursor-pointer duration-200 no-underline"
+                                        href="/news"><span><span
+                                                class="group-hover:prose-pink md:prose-white xxs:prose-dark_gray break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-normal font-SometypeMono tracking-normal prose-white">Company
+                                                news</span></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div
+                        class="ms: mt-[0px] xxs:mt-[48px] md:mt-[36px] md:pt-0 xxs:pt-[32px] md:border-none xxs:border-dark_gray xxs:border-t col-start-1 md:row-start-1 xxs:row-start-auto md:col-span-4 xs:col-span-2 xxs:col-span-1 grid lg:grid-cols-4 xs:grid-cols-2 xxs:grid-cols-1 auto-rows-min relative">
+                        <div class="col-start-1 md:pt-[25px] xxs:pt-0 md:col-span-1 xxs:col-span-2 ">
+                            <div>
+                                <p
+                                    class="min-h-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-white">
+                                    <span><span class="relative z-[1]">Copyright © 2024 Each&amp;Other Ltd.
+                                        </span></span></p>
+                                <p
+                                    class="min-h-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-white">
+                                    <span><span class="relative z-[1]">Registered in Ireland. No. 545982</span></span>
+                                </p>
+                                <p
+                                    class="min-h-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-CircularStd tracking-normal prose-white">
+                                    <span><span class="relative z-[1]"><a
+                                                class="prose group pb-0 hover:cursor-pointer duration-200 no-underline"
+                                                href="/privacy-policy"><span><span
+                                                        class="group-hover:prose-white text-base break-words duration-200 prose max-w-full min-h-[1em] relative marker:text-charcoal text-left text-base font-normal font-CircularStd tracking-normal prose-pink">Privacy
+                                                        Policy</span></span></a></span></span></p>
+                            </div>
+                        </div>
+                        <div class="md:col-start-4 xs:col-start-2 md:block xxs:hidden "><a href="/"><span
+                                    class="sr-only">Homepage</span><svg width="173" height="25" viewBox="0 0 250 37"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg" class="prose-pink">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M122.197 20.5899C122.623 21.416 122.88 22.3287 122.88 23.3042C122.88 26.8146 119.798 29.6601 115.995 29.6601C112.192 29.6601 109.109 26.8146 109.109 23.3042C109.109 19.7937 112.192 16.9482 115.995 16.9482C116.076 16.9482 116.155 16.9522 116.235 16.9561C116.302 16.9585 116.369 16.9609 116.435 16.9648C116.796 16.9897 117.146 17.0415 117.487 17.1169V20.5899H122.197ZM115.864 15.0191C115.842 15.0139 115.819 15.0075 115.799 15.0075C113.259 15.0075 111.201 13.1618 111.201 10.886C111.201 8.60928 113.259 6.76365 115.799 6.76365C117.196 6.76365 118.443 7.3246 119.285 8.20672L122.676 3.41119C120.844 1.94567 118.451 1.05754 115.833 1.05754C110.07 1.05754 105.398 5.35105 105.398 10.6474C105.398 12.2617 105.833 13.7825 106.6 15.1173C104.235 17.3318 102.753 20.3788 102.753 23.7685C102.753 30.532 108.574 36.0151 115.754 36.0151C122.936 36.0151 128.757 30.532 128.757 23.7685C128.757 22.8162 128.618 21.8988 128.392 21.0127H130.295V15.0191H117.003H115.864ZM199.618 10.574C197.29 10.574 194.614 11.3462 193.029 13.182V0H186.439V34.9576H193.029V21.0035C193.177 18.3967 194.812 16.3685 197.587 16.3685C200.758 16.3685 202.096 18.4446 202.096 21.1001V34.9576H208.685V19.9893C208.685 14.7746 205.812 10.574 199.618 10.574ZM179.405 4.23535H173.446V7.62956C173.446 9.79407 172.254 11.4672 169.672 11.4672H168.431V17.272H172.85V28.5371C172.85 33.2111 175.83 36.015 180.596 36.015C182.533 36.015 183.725 35.6705 184.32 35.4244V30.0133C183.973 30.1114 183.079 30.2098 182.285 30.2098C180.398 30.2098 179.405 29.5215 179.405 27.4058V17.272H184.32V11.4672H179.405V4.23535ZM216.101 20.128C216.245 18.1627 218.075 15.8907 221.397 15.8907C225.057 15.8907 226.598 17.9879 226.694 20.128H216.101ZM221.374 10.5918C215.32 10.5918 209.746 15.5606 209.746 23.2062C209.746 31.2912 215.464 36.0155 221.951 36.0155C227.766 36.0155 231.514 32.5574 232.715 28.4178L227.381 26.8105C226.612 28.9534 224.979 30.4636 221.999 30.4636C218.828 30.4636 216.185 28.1737 216.041 25.0084H232.955C232.955 24.9113 233.051 23.9367 233.051 23.0113C233.051 15.3169 228.679 10.5918 221.374 10.5918ZM248.469 10.5918C246.392 10.5918 243.03 11.1816 241.547 14.3746V10.7884H235.17V34.9562H241.745V23.9034C241.745 18.6969 244.661 17.0762 248.023 17.0762C248.617 17.0762 249.259 17.1253 250 17.2728V10.6901C249.506 10.6409 249.012 10.5918 248.469 10.5918ZM150.399 29.6615C145.187 29.6615 139.83 25.9094 139.83 18.009C139.83 10.109 145.187 6.35645 150.399 6.35645C155.66 6.35645 161.016 10.109 161.016 18.009C161.016 25.9094 155.66 29.6615 150.399 29.6615ZM150.4 0C141.472 0 133.475 6.87204 133.475 18.0324C133.475 29.1445 141.472 36.0169 150.4 36.0169C159.375 36.0169 167.373 29.1445 167.373 18.0324C167.373 6.87204 159.375 0 150.4 0ZM0 34.9576H24.3644V28.5477H6.80042V20.4613H22.9349V14.3968H6.80042V6.4099H24.3644V0H0V34.9576ZM38.7125 29.6618C35.2742 29.6618 32.8389 26.9078 32.8389 22.6814C32.8389 18.4071 35.322 15.8906 38.7125 15.8906C42.0557 15.8906 44.4914 18.4071 44.4914 22.6814C44.4914 26.9545 42.0083 29.6618 38.7125 29.6618ZM50.656 11.2758H44.5056V14.2586C43.9331 12.8893 41.9788 10.5918 37.7823 10.5918C30.9644 10.5918 26.4824 16.1647 26.4824 23.2056C26.4824 30.4907 31.0598 36.0155 37.9731 36.0155C41.1201 36.0155 43.5519 34.3523 44.5533 32.0544V32.3483C44.5533 33.5215 44.696 34.7926 44.7914 35.3307H50.8468C50.7991 34.7926 50.656 33.131 50.656 30.9786V11.2758ZM91.5702 10.5747C89.2416 10.5747 86.5659 11.3472 84.9809 13.1818V0H78.3907V34.9576H84.9809V21.004C85.1292 18.3969 86.7638 16.3687 89.5382 16.3687C92.7091 16.3687 94.0471 18.4452 94.0471 21.1003V34.9576H100.636V19.9895C100.636 14.7753 97.7634 10.5747 91.5702 10.5747ZM65.3098 30.0735C62.0688 30.0735 59.3047 27.6381 59.3047 23.3039C59.3047 18.9692 62.0211 16.5825 65.2621 16.5825C68.4073 16.5825 69.8847 18.6276 70.4566 20.6252L76.1283 18.6764C75.1277 14.6345 71.5052 10.5918 65.119 10.5918C58.3033 10.5918 52.9658 15.9007 52.9658 23.3039C52.9658 30.6579 58.3987 36.0155 65.3098 36.0155C71.5529 36.0155 75.2226 31.9249 76.2709 27.9305L70.695 26.0312C70.1704 27.8818 68.5504 30.0735 65.3098 30.0735Z"
+                                        fill="currentColor"></path>
+                                </svg></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</html>
